@@ -40,7 +40,7 @@ div.widget {
     left: 0;
     padding: 0 15px;
     background: #fff;
-    z-index: 1;
+    z-index: 10000;
 }
 
 body.logged-in .brand-bar {
@@ -48,7 +48,7 @@ body.logged-in .brand-bar {
 }
 
 body.logged-in.device-mobile .brand-bar {
-    top: 44px;
+    top: 46px;
 }
 
 .brand-bar .wrapper-inner li {
@@ -163,6 +163,7 @@ html.popup-open body {
     z-index: 99998;
     padding: 53px 0 35px;
     text-align: center;
+    margin-top: -30px;
 }
 
 .device-mobile .brand-bar .branches-open li a {
