@@ -35,10 +35,6 @@ if ( typeof jQuery !== 'undefined' ) {
 			return ($('body').hasClass('admin-bar')) ? $('#wpadminbar').height() : 0;
 		}
 
-		jQuery(window).on("load",function(e){
-			$('.brand-bar').show();
-		});
-
     })(jQuery);
 
 }

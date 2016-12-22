@@ -21,7 +21,7 @@ use Q_GH_Brand_Bar\Theme\Template as Template;
 class Plugin {
 
 	// Settings ##
-    protected $version = '0.3.1';
+    protected $version = '0.3.2';
     static $device; // current device handle ( 'desktop || handheld' )##
 	#protected $max_students = 5; // max number of students that can be saved ##
     #protected $form_id = 26; // 4 .. ID of Gravity Form

@@ -22,6 +22,10 @@
 
 /* Branding Bar - General */
 
+div.brand-bar.handheld {
+    display: none; /* this is the load state, hiding the handheld markup */
+}
+
 body {
     margin-top: 36px !important;
 }
@@ -33,7 +37,6 @@ div.widget {
 }
 
 .brand-bar {
-    display: none;
     float: none;
     position: absolute;
     top: 0px;

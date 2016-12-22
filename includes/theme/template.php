@@ -109,7 +109,7 @@ class Template extends Plugin {
     {
 
         // mobile device ##
-        if ( 'handheld' == Helper::get_device() ) {
+        #if ( 'handheld' == Helper::get_device() ) {
 
 ?>
         <div class="widget widget-brand-bar brand-bar wrapper-outer handheld">
@@ -134,7 +134,7 @@ class Template extends Plugin {
 <?php
 
         // desktop + tablet ##
-        } else {
+        #} else {
 
 ?>
         <div class="widget widget-brand-bar brand-bar wrapper-outer desktop">
@@ -152,7 +152,7 @@ class Template extends Plugin {
         </div>
 <?php
 
-        }
+        #}
 
     }
 
