@@ -82,11 +82,7 @@ body.logged-in.device-mobile .brand-bar {
 /* Mobile */
 
 body.device-mobile {
-    margin-top: 30px !important;
-}
-
-.device-mobile .brand-bar {
-    top: -30px;
+    margin-top: 30px !important; 
 }
 
 .device-mobile .brand-bar .wrapper-inner {
