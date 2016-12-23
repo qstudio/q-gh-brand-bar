@@ -233,3 +233,11 @@ html.popup-open body {
 .install-greenheart-club-international .brand-bar li {
     margin-bottom: 0;
 }
+
+
+/* International */
+
+.install-greenheart-international #menu-primary li.donate,
+.install-greenheart-international  #header_wrapper_inner > a {
+    display: none;
+}

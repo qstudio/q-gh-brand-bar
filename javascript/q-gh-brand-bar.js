@@ -39,11 +39,7 @@ if ( typeof jQuery !== 'undefined' ) {
 			});
 		});
 
-		function adminBarHeight() {
-			return ($('body').hasClass('admin-bar')) ? $('#wpadminbar').height() : 0;
-		}
-
-		$(window).on("load resize",function(e){
+		$(window).on("load resize", function(e){
 
 			if ( $('body').hasClass('install-greenheart-international') ) {
 				var windowWidth = window.innerWidth;
@@ -57,6 +53,21 @@ if ( typeof jQuery !== 'undefined' ) {
 				}
 			}
 		});
+
+		$(window).on('load scroll', function(){
+
+			if ($('body').hasClass('install-greenheart-international')) {
+	        	var fromTop = $(window).scrollTop();
+				var headerFromTop = adminBarHeight();
+	            if (fromTop < 36)
+	            	headerFromTop += 36 - fromTop;
+				$('.device-mobile #header_wrapper_outer').css('top', headerFromTop + 'px');
+			}
+		});
+
+		function adminBarHeight() {
+			return ($('body').hasClass('admin-bar')) ? $('#wpadminbar').height() : 0;
+		}
 
     })(jQuery);
 
