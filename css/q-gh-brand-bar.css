@@ -222,6 +222,14 @@ html.popup-open body {
 
 /* Club */
 
+.install-greenheart-club-international {
+    background-position: top 36px center;
+}
+
+.install-greenheart-club-international.device-mobile {
+    background-position: top 30px center;
+}
+
 .install-greenheart-club-international .brand-bar {
     position: absolute;
     width: 100%;
