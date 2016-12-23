@@ -76,6 +76,7 @@ body.logged-in.device-mobile .brand-bar {
 }
 
 .brand-bar .wrapper-inner li.donate a {
+    box-sizing: border-box;
     padding: 0 10px;
     margin: 7px 15px;
     border-radius: 100px;
@@ -225,4 +226,8 @@ html.popup-open body {
     margin-bottom: 0;
     border-radius: 0;
     box-shadow: none;
+}
+
+.install-greenheart-club-international .brand-bar li {
+    margin-bottom: 0;
 }
