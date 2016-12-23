@@ -45,6 +45,7 @@ div.widget {
     padding: 0 15px;
     background: #fff;
     z-index: 10000;
+    border-bottom: 1px solid #dfe5ea;
 }
 
 body.logged-in .brand-bar {
