@@ -8,11 +8,19 @@ if ( typeof jQuery !== 'undefined' ) {
 
     (function ($) {
 
-		// clone body class ##
+		// clone body classes ##
 		if ( $('body').hasClass( 'browsers-mobile' ) ) {
 			// console.log( 'adding class..' );
 			$('body').addClass("device-mobile");
-		} 
+		}
+		if ( $('body').hasClass( 'browsers-desktop' ) ) {
+			$('body').addClass("device-desktop");
+		}
+
+		if ( $('body').hasClass('install-greenheart-transforms') ) {
+			$('body').addClass('device-desktop');
+			$('body').removeClass('device-mobile');
+		}
 
 		$('.device-mobile .brand-bar .wrapper-inner .greenheart a').click(function(e){
 			e.preventDefault();
@@ -34,6 +42,21 @@ if ( typeof jQuery !== 'undefined' ) {
 		function adminBarHeight() {
 			return ($('body').hasClass('admin-bar')) ? $('#wpadminbar').height() : 0;
 		}
+
+		$(window).on("load resize",function(e){
+
+			if ( $('body').hasClass('install-greenheart-international') ) {
+				var windowWidth = window.innerWidth;
+				console.log(windowWidth);
+				if (windowWidth > 640) {
+					$('body').addClass('device-desktop');
+					$('body').removeClass('device-mobile');
+				} else {
+					$('body').addClass('device-mobile');
+					$('body').removeClass('device-desktop');
+				}
+			}
+		});
 
     })(jQuery);
 

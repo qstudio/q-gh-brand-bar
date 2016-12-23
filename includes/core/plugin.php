@@ -3,16 +3,7 @@
 namespace Q_GH_Brand_Bar\Core;
 
 use Q_GH_Brand_Bar\Core\Helper as Helper;
-#use Q_GH_Brand_Bar\Admin\UI as Admin;
 use Q_GH_Brand_Bar\Theme\Template as Template;
-#use Q_GH_Brand_Bar\Plugin\Q_search as Q_Search;
-#use Q_GH_Brand_Bar\AJAX\Callback as Callback;
-#use Q_GH_Brand_Bar\Plugin\Gravity_Forms as Gravity_Forms;
-#use Q_GH_Brand_Bar\Type\Taxonomy as Taxonomy;
-#use Q_GH_Brand_Bar\Type\Post_Type as Post_Type;
-#use Q_GH_Brand_Bar\Cron\Schedule as Cron;
-#use Q_GH_Brand_Bar\Cron\Fetch_Students as Fetch_Students;
-#use Q_GH_Brand_Bar\Cron\Update_Students as Update_Students;
 
 /**
  * Class Plugin
@@ -21,15 +12,9 @@ use Q_GH_Brand_Bar\Theme\Template as Template;
 class Plugin {
 
 	// Settings ##
-    protected $version = '0.3.3';
+    protected $version = '0.3.4';
     static $device; // current device handle ( 'desktop || handheld' )##
-	#protected $max_students = 5; // max number of students that can be saved ##
-    #protected $form_id = 26; // 4 .. ID of Gravity Form
-    #protected $cron = false; // hold instance of Cron object ##
     protected static $debug = true;
-    #protected $wsdl_url = 'http://54.174.220.251:8086/cci_gh_go/services/findForm?WSDL'; // WSDL URL ##
-
-    #protected $cache = true; // build transient cache of each student profile ##
 
     /**
      * Instatiate Class
@@ -59,26 +44,11 @@ class Plugin {
         // set text domain ##
         add_action( 'init', array( $this, 'load_plugin_textdomain' ), 1 );
 
-    	// admin hooks and scripts ##
-        #new Admin();
-
         // front-end templates, styles and scripts ##
     	new Template();
 
-        // filter q-search defaults ##
-        #new Q_search();
-
         // AJAX callback methods ##
         #new Callback();
-
-        // Update Gravity Form
-        #new Gravity_Forms();
-
-        // Cron routine to fetch new profile data from GO - runs every 30 mins ##
-        #new Fetch_Students();
-
-        // Cron routine to update student profiles stored inside WordPress - runs every 60 mins ##
-        #new Update_Students();
 
     }
 
@@ -88,13 +58,6 @@ class Plugin {
 	 */
 	public function activate() {
 
-		// set-up cron ##
-		#if ( $this->cron ) $this->cron->wp_schedule_event( 'thirty', 'q_mos_fetch_students' );
-		#if ( $this->cron ) $this->cron->wp_schedule_event( 'hourly', 'q_mos_update_students' );
-
-		// Update the rewrite rules
-		#flush_rewrite_rules();
-
 	}
 
 
@@ -102,12 +65,6 @@ class Plugin {
 	 * Fired when the plugin is deactivated.
 	 */
 	public function deactivate() {
-
-		// take down cron ##
-		#if ( $this->cron ) $this->cron->wp_clear_scheduled_hook( 'q_mos_fetch_students' );
-		#if ( $this->cron ) $this->cron->wp_clear_scheduled_hook( 'q_mos_update_students' );
-
-		#flush_rewrite_rules();
 
 	}
 

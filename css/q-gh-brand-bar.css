@@ -37,9 +37,10 @@ div.widget {
 }
 
 .brand-bar {
+    box-sizing: border-box;
     float: none;
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0;
     padding: 0 15px;
     background: #fff;
@@ -213,4 +214,15 @@ html.popup-open body {
 
 .install-cci-greenheart.device-mobile .brand-bar {
     top: -30px !important;
+}
+
+
+/* Club */
+
+.install-greenheart-club-international .brand-bar {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
