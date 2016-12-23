@@ -22,7 +22,7 @@ if ( typeof jQuery !== 'undefined' ) {
 			$('body').removeClass('device-mobile');
 		}
 
-		$('.device-mobile .brand-bar .wrapper-inner .greenheart a').click(function(e){
+		$(document).on('click', '.device-mobile .brand-bar .wrapper-inner .greenheart a', function(e){
 			e.preventDefault();
 			var popup = $('.device-mobile .brand-bar .branches-open');
 			var popupHeight = popup.height() + 200;
