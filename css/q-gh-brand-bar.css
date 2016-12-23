@@ -88,6 +88,14 @@ body.device-mobile {
     margin-top: 30px !important; 
 }
 
+.device-mobile .brand-bar.desktop {
+    display: none;
+}
+
+.device-mobile .brand-bar.handheld {
+    display: block;
+}
+
 .device-mobile .brand-bar .wrapper-inner {
     padding: 0 !important;
 }
