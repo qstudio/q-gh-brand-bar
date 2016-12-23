@@ -201,7 +201,8 @@ html.popup-open body {
     background: no-repeat center url(../img/logo.png);
 }
 
-.global-footer {
+.global-footer,
+#footer-global {
     display: none !important;
 }
 
