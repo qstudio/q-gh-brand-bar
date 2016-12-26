@@ -26,13 +26,13 @@ if ( typeof jQuery !== 'undefined' ) {
 			e.preventDefault();
 			var popup = $('.device-mobile .brand-bar .branches-open');
 			var popupHeight = popup.height() + 200;
-			popup.css('min-height', window.innerHeight - adminBarHeight() + 'px');
+			popup.css('min-height', window.innerHeight - getAdminBarHeight() + 'px');
 			if ($('body').hasClass('install-cci-greenheart')) {
-				popup.css('margin-top', adminBarHeight() + 'px');
+				popup.css('margin-top', getAdminBarHeight() + 'px');
 			}
 			popup.show();
 			$('html').addClass('popup-open');
-			$('body').height(popupHeight - adminBarHeight() - 30);
+			$('body').height(popupHeight - getAdminBarHeight() - 30);
 			$('.branches-close').click(function(){
 				popup.hide();
 				$('html').removeClass('popup-open');
@@ -43,7 +43,6 @@ if ( typeof jQuery !== 'undefined' ) {
 
 			if ( $('body').hasClass('install-greenheart-international') ) {
 				var windowWidth = window.innerWidth;
-				console.log(windowWidth);
 				if (windowWidth > 640) {
 					$('body').addClass('device-desktop');
 					$('body').removeClass('device-mobile');
@@ -58,14 +57,15 @@ if ( typeof jQuery !== 'undefined' ) {
 
 			if ($('body').hasClass('install-greenheart-international')) {
 	        	var fromTop = $(window).scrollTop();
-				var headerFromTop = adminBarHeight();
-	            if (fromTop < 30)
-	            	headerFromTop += 30 - fromTop;
+	        	var adminBarHeight = getAdminBarHeight();
+				var headerFromTop = adminBarHeight;
+	            if (fromTop < 30 + adminBarHeight)
+	            	headerFromTop += 30 + adminBarHeight - fromTop;
 				$('.device-mobile #header_wrapper_outer').css('top', headerFromTop + 'px');
 			}
 		});
 
-		function adminBarHeight() {
+		function getAdminBarHeight() {
 			return ($('body').hasClass('admin-bar')) ? $('#wpadminbar').height() : 0;
 		}
 
