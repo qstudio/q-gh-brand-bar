@@ -44,7 +44,7 @@ div.widget {
     left: 0;
     padding: 0 15px;
     background: #fff;
-    z-index: 10000;
+    z-index: 998;
     border-bottom: 1px solid #dfe5ea;
 }
 
