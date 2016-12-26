@@ -58,7 +58,7 @@ if ( typeof jQuery !== 'undefined' ) {
 			if ($('body').hasClass('install-greenheart-international')) {
 	        	var fromTop = $(window).scrollTop();
 	        	var adminBarHeight = getAdminBarHeight();
-				var headerFromTop = adminBarHeight;
+				var headerFromTop = 0;
 	            if (fromTop < 30 + adminBarHeight)
 	            	headerFromTop += 30 + adminBarHeight - fromTop;
 				$('.device-mobile #header_wrapper_outer').css('top', headerFromTop + 'px');
