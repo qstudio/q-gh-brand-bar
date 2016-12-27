@@ -173,7 +173,7 @@ class Template extends Plugin {
                 'Greenheart'    => array (
                         'src'       => 'greenheart'
                     ,   'url'       => 'https://www.greenheart.org/'
-                    ,   'alt'       => 'Greenheart'
+                    ,   'alt'       => 'greenheart'
                 ),
                 'CCI Greenheart'    => array (
                         'src'       => 'cci-greenheart'
@@ -183,17 +183,17 @@ class Template extends Plugin {
                 'Greenheart Travel' => array (
                         'src'       => 'greenheart-travel'
                     ,   'url'       => 'https://www.greenhearttravel.org'
-                    ,   'alt'       => 'Travel'
+                    ,   'alt'       => 'travel'
                 ),
                 'Greenheart Shop' => array (
                         'src'       => 'greenheart-shop'
                     ,   'url'       => 'http://www.greenheartshop.org'
-                    ,   'alt'       => 'Shop'
+                    ,   'alt'       => 'shop'
                 ),
                 'Greenheart Transforms' => array (
                         'src'       => 'greenheart-transforms'
                     ,   'url'       => 'http://www.greenhearttransforms.org'
-                    ,   'alt'       => 'Transforms'
+                    ,   'alt'       => 'transforms'
                 ),
                 // 'Greenheart Ibiza' => array (
                 //         'src'       => 'greenheart-ibiza'
