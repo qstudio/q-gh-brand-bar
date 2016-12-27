@@ -178,7 +178,7 @@ class Template extends Plugin {
                 'CCI Greenheart'    => array (
                         'src'       => 'cci-greenheart'
                     ,   'url'       => 'https://www.cci-exchange.com/'
-                    ,   'alt'       => 'CCI Greenheart'
+                    ,   'alt'       => 'CCI greenheart'
                 ),
                 'Greenheart Travel' => array (
                         'src'       => 'greenheart-travel'
