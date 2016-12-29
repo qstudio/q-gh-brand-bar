@@ -261,3 +261,10 @@ html.popup-open body {
 .install-greenheart-international.device-mobile #header_wrapper_outer.q-menu-on #menu-toggle {
     margin-top: 30px;
 }
+
+
+/* GH Travel */
+
+.install-greenheart-travel #header .menu-container {
+    margin-top: 30px;
+}
