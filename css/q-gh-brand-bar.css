@@ -248,10 +248,15 @@ html.popup-open body {
 /* International */
 
 .install-greenheart-international #menu-primary li.donate,
-.install-greenheart-international  #header_wrapper_inner > a {
+.install-greenheart-international #header_wrapper_inner > a {
     display: none;
 }
 
 .install-greenheart-international .brand-bar {
     z-index: 1000;
+}
+
+.install-greenheart-international.device-mobile #header_wrapper_outer.q-menu-on #header,
+.install-greenheart-international.device-mobile #header_wrapper_outer.q-menu-on #menu-toggle {
+    margin-top: 30px;
 }
