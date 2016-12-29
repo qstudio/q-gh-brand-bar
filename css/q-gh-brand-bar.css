@@ -61,6 +61,10 @@ body.logged-in.device-mobile .brand-bar {
     list-style: none;
 }
 
+.brand-bar .branches-open li {
+    list-style: none;
+}
+
 .brand-bar .wrapper-inner li.donate {
     float: right;
 }
