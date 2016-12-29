@@ -27,7 +27,7 @@ if ( typeof jQuery !== 'undefined' ) {
 			var popup = $('.device-mobile .brand-bar .branches-open');
 			var popupHeight = popup.height() + 200;
 			popup.css('min-height', window.innerHeight - getAdminBarHeight() + 'px');
-			if ($('body').hasClass('install-cci-greenheart')) {
+			if ($('body').hasClass('install-cci-greenheart') || $('body').hasClass('install-a-global-view')) {
 				popup.css('margin-top', getAdminBarHeight() + 'px');
 			}
 			popup.show();
