@@ -48,6 +48,11 @@ div.widget {
     border-bottom: 1px solid #dfe5ea;
 }
 
+.brand-bar ul,
+.brand-bar li {
+    list-style: none;
+}
+
 body.logged-in .brand-bar {
     top: 32px;
 }
@@ -58,11 +63,6 @@ body.logged-in.device-mobile .brand-bar {
 
 .brand-bar .wrapper-inner li {
     float: left;
-    list-style: none;
-}
-
-.brand-bar .branches-open li {
-    list-style: none;
 }
 
 .brand-bar .wrapper-inner li.donate {
