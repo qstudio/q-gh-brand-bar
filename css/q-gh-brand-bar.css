@@ -53,6 +53,10 @@ div.widget {
     list-style: none;
 }
 
+.brand-bar ul {
+    margin-left: 0;
+}
+
 body.logged-in .brand-bar {
     top: 32px;
 }
