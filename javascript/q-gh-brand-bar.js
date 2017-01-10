@@ -24,7 +24,7 @@ if ( typeof jQuery !== 'undefined' ) {
 
 		// Club fix
 		if ($('body').hasClass('install-greenheart-club-international')) {
-			$('.brand-bar.desktop').after('<div style="float:left;clear:both;"></div>');
+			$('.brand-bar.desktop').after('<div class="fixer"></div>');
 		}
 
 		$(document).on('click', '.device-mobile .brand-bar .wrapper-inner .greenheart a', function(e){
