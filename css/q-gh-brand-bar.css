@@ -241,7 +241,8 @@ html.popup-open body {
     float:left;
     clear:both;
     width: 100%;
-    height: 1px;
+    height: 2px;
+    background: red;
 }
 
 .install-greenheart-club-international.device-mobile {
