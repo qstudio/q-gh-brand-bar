@@ -57,11 +57,11 @@ div.widget {
     margin-left: 0;
 }
 
-body.logged-in .brand-bar {
+body.admin-bar .brand-bar {
     top: 32px;
 }
 
-body.logged-in.device-mobile .brand-bar {
+body.admin-bar.device-mobile .brand-bar {
     top: 46px;
 }
 
@@ -263,7 +263,7 @@ html.popup-open body {
 }
 
 .install-greenheart-international .brand-bar {
-    z-index: 1000;
+    z-index: 998;
 }
 
 .install-greenheart-international.device-mobile #header_wrapper_outer.q-menu-on #header,

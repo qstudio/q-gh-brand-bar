@@ -3,7 +3,7 @@ Contributors: qlstudio
 Tags: custom plugin
 Requires at least: 4
 Tested up to: 4.7
-Stable tag: 0.4.22
+Stable tag: 0.4.23
 License: GPL
 
 Add a global branding bar to all templates 
