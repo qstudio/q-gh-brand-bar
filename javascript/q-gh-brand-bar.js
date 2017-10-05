@@ -25,7 +25,7 @@ if ( typeof jQuery !== 'undefined' ) {
 		$(document).on('click', '.device-mobile .brand-bar .wrapper-inner .greenheart a', function(e){
 			e.preventDefault();
 			var popup = $('.device-mobile .brand-bar .branches-open');
-			var popupHeight = popup.height() + 200;
+			var popupHeight = popup.height();
 			popup.css('min-height', window.innerHeight - getAdminBarHeight() + 'px');
 			if ($('body').hasClass('install-cci-greenheart') || $('body').hasClass('install-a-global-view')) {
 				popup.css('margin-top', getAdminBarHeight() + 'px');

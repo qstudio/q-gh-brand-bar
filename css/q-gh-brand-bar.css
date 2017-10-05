@@ -175,14 +175,19 @@ html.popup-open body {
 .device-mobile .brand-bar .branches-open {
     display: none;
     position: absolute;
-    top: 30px;
+    top: 0;
     left: 0;
     width: 100%;
     background: #000;
     z-index: 99998;
     padding: 53px 0 35px;
     text-align: center;
-    margin-top: -30px;
+    margin: 0;
+}
+
+.install-greenheart-exchange.device-mobile .brand-bar .branches-open,
+.install-cci-greenheart.device-mobile .brand-bar .branches-open {
+    top: 32px;
 }
 
 .device-mobile .brand-bar .branches-open li a {
