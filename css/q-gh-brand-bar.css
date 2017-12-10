@@ -61,8 +61,10 @@ body.admin-bar .brand-bar {
     top: 32px;
 }
 
-body.admin-bar.device-mobile .brand-bar {
-    top: 46px;
+@media screen and (max-width: 782px) {
+    body.admin-bar .brand-bar {
+        top: 46px;
+    }
 }
 
 .brand-bar .wrapper-inner li {
