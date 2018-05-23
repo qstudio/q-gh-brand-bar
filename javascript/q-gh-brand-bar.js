@@ -68,7 +68,14 @@ if ( typeof jQuery !== 'undefined' ) {
 		function getAdminBarHeight() {
 			return ($('body').hasClass('admin-bar')) ? $('#wpadminbar').height() : 0;
 		}
-
+		$(window).on('load', function(){
+			if($('body').hasClass('install-teach-u-s-a')) {
+				let bodyMargin = $('body').offset();
+				let adminBarHeight = getAdminBarHeight();
+				let bb = $('body.device-desktop').length ? $('.widget-brand-bar').filter('.desktop') : $('.widget-brand-bar').filter('.handheld');
+				$(bb).css('top', 0 + adminBarHeight - bodyMargin.top );
+			}
+		});
     })(jQuery);
 
 } 
