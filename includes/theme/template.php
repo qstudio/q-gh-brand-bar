@@ -98,6 +98,28 @@ class Template extends Plugin {
 
     }
 
+    public static function renderPromo()
+    {
+        ?>
+        <div id="bb-promo" class="widget widget-bb-promo">
+            <span class="remove hidden-xs"></span>
+            <div class="row row-eq-height">
+                <div class="col-md-1 visible-md visible-lg"></div>
+
+                <div class="col-md-2 col-sm-3 logo hidden-xs"><img src="<?php echo helper::get('img/award.png') ?>" /></div>
+
+                <div class="content col-sm-6 col-xs-12">
+                    <div class="title">Greenheart Wins 2018 Best Education Abroad Provider by WYSTC</div>
+                    <div class="hidden-xs">Our signature leadership program, the Greenheart Odyssey, topped the shortlist of initiatives honoring the best in cultural exchange. Judges of the WYSTC awards were among top industry experts in the field.</div>
+                </div>
+
+                <div class="col-xs-6 cta visible-xs"><button class="btn remove">got it</button></div>
+                <div class="col-md-2 col-sm-3 cta col-xs-6"><button class="btn">learn more</button></div>
+                <div class="col-md-1 visible-md visible-lg"></div>
+            </div>
+        </div>
+        <?php
+    }
 
 	/**
      * Render Brand Bar - called from widget added to theme template
@@ -107,7 +129,9 @@ class Template extends Plugin {
      */
     public static function render()
     {
-
+        if (get_option(Plugin::$name)['promo']) {
+            self::renderPromo();
+        }
         // mobile device ##
         #if ( 'handheld' == Helper::get_device() ) {
 

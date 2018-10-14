@@ -127,4 +127,9 @@ class Helper extends Plugin {
 
     }
 
+    public static function get($path = '')
+    {
+        return plugin_dir_url().'/q-gh-brand-bar/'.$path;
+    }
+
 }
