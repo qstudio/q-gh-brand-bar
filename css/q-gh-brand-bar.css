@@ -21,11 +21,18 @@
 }
 
 /* common start */
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .btn {
     background-color: #8ac53f;
+    display: inline-block;
     border-radius: 4px;
     color: white;
-    padding: 10px 20px;
+    font-weight: bold !important;
+    padding: 10px 20px !important;
     text-transform: uppercase;
 }
 
@@ -57,7 +64,8 @@
 }
 
 #bb-promo .content {
-    line-height: 1.2;
+    font-family: VAGRounded;
+    font-size: 16px;
 }
 
 #bb-promo .content .title {
