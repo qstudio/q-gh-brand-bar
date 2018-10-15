@@ -12,10 +12,11 @@ use Q_GH_Brand_Bar\Theme\Template as Template;
 class Plugin {
 
 	// Settings ##
-    protected $version = '0.4.22';
-    static $device; // current device handle ( 'desktop || handheld' )##
+    protected $version = '0.5.1';
+    static $device; // current device handle ( 'desktop || handheld' ) ##
     protected static $debug = true;
     static $name = 'q-gh-bb';
+
     /**
      * Instatiate Class
      *
@@ -45,6 +46,7 @@ class Plugin {
         add_action( 'init', array( $this, 'load_plugin_textdomain' ), 1 );
 
         // admin menu
+        // @todo - viktor - this should be moved to an admin class ##
         add_action('admin_menu', array($this, 'admin_menu'));
 
         // front-end templates, styles and scripts ##
@@ -57,7 +59,7 @@ class Plugin {
 
     public function admin_menu()
     {
-        add_options_page( 'Branding Bar', 'Branding Bar', 'manage_options', self::$name, function() {
+        add_options_page( 'Greenheart Global', 'Greenheart Global', 'manage_options', self::$name, function() {
 
         // validate
         if ($_POST && isset($_POST['action']) && self::$name === $_POST['action'] ) {

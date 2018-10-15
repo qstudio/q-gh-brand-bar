@@ -72,6 +72,7 @@ class Template extends Plugin {
         // enqueue the script ##
         wp_enqueue_script( 'q-gh-brand-bar-js' );
 
+        // @todo - viktor - all assets should be loaded with version numbers for caching and cache-busting ##
         wp_register_style( 'q-gh-brand-bar-css', QGHBB_URL.'css/q-gh-brand-bar.css' );
         wp_enqueue_style( 'q-gh-brand-bar-css' );
 
@@ -129,6 +130,9 @@ class Template extends Plugin {
      */
     public static function render()
     {
+
+        // @todo viktor - later, this needs to be set-up differently ##
+        // render() should call a method for each UI featuer being rendered and they should have checks internally if the features are active ##
         if (get_option(Plugin::$name)['promo']) {
             self::renderPromo();
         }
