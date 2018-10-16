@@ -11,7 +11,7 @@ class Menu {
 
     public function admin_menu()
     {
-        add_options_page( 'Greenheart Global', 'Greenheart Global', 'manage_options', Plugin::$name, function() {
+        add_options_page( 'Branding Bar', 'Branding Bar', 'manage_options', Plugin::$name, function() {
 
             // validate
             if ($_POST && isset($_POST['action']) && Plugin::$name === $_POST['action'] ) {

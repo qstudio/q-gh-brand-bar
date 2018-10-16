@@ -75,6 +75,9 @@ class Template extends Plugin {
         wp_register_style( 'q-gh-brand-bar-css', QGHBB_URL.'css/q-gh-brand-bar.css', '', Plugin::$version);
         wp_enqueue_style( 'q-gh-brand-bar-css' );
 
+        wp_register_style( 'q-gh-promo-css', QGHBB_URL.'scss/q-gh-promo.css', '', Plugin::$version);
+        wp_enqueue_style( 'q-gh-promo-css' );
+
         wp_register_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700');
         wp_enqueue_style( 'google-fonts' );
 
@@ -105,7 +108,7 @@ class Template extends Plugin {
     public static function renderPromo()
     {
         ?>
-        <div id="bb-promo" class="widget widget-bb-promo">
+        <div id="bb-promo" class="widget-bb-promo">
             <span class="remove hidden-xs"></span>
             <div class="row row-eq-height">
                 <div class="col-md-1 visible-md visible-lg"></div>
