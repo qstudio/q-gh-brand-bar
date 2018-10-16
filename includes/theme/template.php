@@ -214,17 +214,17 @@ class Template extends Plugin {
                 'CCI Greenheart'    => array (
                         'src'       => 'greenheart-exchange'
                     ,   'url'       => 'https://www.greenheartexchange.org/'
-                    ,   'alt'       => 'exchange'
+                    ,   'alt'       => 'programs in USA'
                 ),
                 'Greenheart Travel' => array (
                         'src'       => 'greenheart-travel'
                     ,   'url'       => 'https://www.greenhearttravel.org'
-                    ,   'alt'       => 'travel'
+                    ,   'alt'       => 'programs abroad'
                 ),
                 'Greenheart Shop' => array (
                         'src'       => 'greenheart-shop'
                     ,   'url'       => 'http://www.greenheartshop.org'
-                    ,   'alt'       => 'shop'
+                    ,   'alt'       => 'fair trade'
                 ),
                 'Greenheart Transforms' => array (
                         'src'       => 'greenheart-transforms'
