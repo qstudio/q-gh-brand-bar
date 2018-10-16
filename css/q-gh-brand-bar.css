@@ -26,18 +26,16 @@
     flex-wrap: wrap;
 }
 
-.btn {
+.btn, a.btn {
     background-color: #8ac53f;
     display: inline-block;
     border-radius: 4px;
     color: white;
-    font-weight: bold !important;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 700 !important;
     padding: 10px 20px !important;
     text-transform: uppercase;
-}
-
-.btn-block {
-    display: block;
 }
 /* common end */
 
@@ -64,13 +62,13 @@
 }
 
 #bb-promo .content {
-    font-family: VAGRounded;
+    font-family: Open Sans;
     font-size: 16px;
 }
 
 #bb-promo .content .title {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 #bb-promo .remove {
@@ -119,9 +117,13 @@
         text-align: center;
     }
 
-    #bb-promo .cta button {
+    #bb-promo .cta .btn {
         border: 2px solid white;
         background-color: #1D365B;
+    }
+
+    #bb-promo .cta .btn:hover {
+        background: rgba(255, 255, 255, 0.8);
     }
 
     #bb-promo .remove {

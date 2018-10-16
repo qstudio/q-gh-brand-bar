@@ -13,7 +13,7 @@
  * Plugin Name:     Global Branding Bar
  * Plugin URI:      http://qstudio.us/
  * Description:     Global branding bar for all Greenheart Sites
- * Version:         0.5.1
+ * Version:         0.5.2
  * Author:          Q Studio
  * Author URI:      http://qstudio.us
  * License:         GPL2
@@ -24,6 +24,7 @@
  */
 
 namespace Q_GH_Brand_Bar;
+use Q_GH_Brand_Bar\Admin\Menu;
 use Q_GH_Brand_Bar\Core\Plugin as Plugin;
 use Q_GH_Brand_Bar\Theme\Template as Template;
 
@@ -37,12 +38,12 @@ defined( 'ABSPATH' ) OR exit;
 /**
  * Load Dependencies
  *
- * @todo        Autoloader
  * @since       0.5
  */
 $autoload = array(
         'core/plugin'
     ,   'core/helper'
+    ,   'admin/menu'
     #,   'type/taxonomy'
     #,   'type/post-type'
     ,   'theme/template'
@@ -58,7 +59,6 @@ $autoload = array(
 foreach ( $autoload as $load ) {
     if ( file_exists( QGHBB_PATH.'includes/'.$load.'.php' ) ) require_once( QGHBB_PATH.'includes/'.$load.'.php' );
 }
-
 
 /**
  * Register hooks that are fired when the plugin is activated or deactivated.
@@ -90,6 +90,7 @@ function hook() {
 
     // new class instance ##
     $instance = new Plugin();
+    new Menu();
 
     // load theme hooks ##
     $instance->run_hooks();

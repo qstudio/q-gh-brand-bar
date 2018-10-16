@@ -126,14 +126,4 @@ class Helper extends Plugin {
         return self::$device = $handle;
 
     }
-
-    /**
-     * 
-     * @todo - Viktor, this is too static, if we change the file path it will break ##
-     */
-    public static function get($path = '')
-    {
-        return plugin_dir_url().'/q-gh-brand-bar/'.$path;
-    }
-
 }

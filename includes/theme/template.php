@@ -51,7 +51,7 @@ class Template extends Plugin {
         #wp_enqueue_script( 'multiselect-js' );
 
         // Register the script ##
-        wp_register_script( 'q-gh-brand-bar-js', QGHBB_URL.'javascript/q-gh-brand-bar.js', array( 'jquery' ), $this->version, true );
+        wp_register_script( 'q-gh-brand-bar-js', QGHBB_URL.'javascript/q-gh-brand-bar.js', array( 'jquery' ), Plugin::$version, true );
 
         // // Now we can localize the script with our data.
         // $translation_array = array(
@@ -72,9 +72,12 @@ class Template extends Plugin {
         // enqueue the script ##
         wp_enqueue_script( 'q-gh-brand-bar-js' );
 
-        // @todo - viktor - all assets should be loaded with version numbers for caching and cache-busting ##
-        wp_register_style( 'q-gh-brand-bar-css', QGHBB_URL.'css/q-gh-brand-bar.css' );
+        wp_register_style( 'q-gh-brand-bar-css', QGHBB_URL.'css/q-gh-brand-bar.css', '', Plugin::$version);
         wp_enqueue_style( 'q-gh-brand-bar-css' );
+
+        wp_register_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700');
+        wp_enqueue_style( 'google-fonts' );
+
 
     }
 
@@ -107,7 +110,7 @@ class Template extends Plugin {
             <div class="row row-eq-height">
                 <div class="col-md-1 visible-md visible-lg"></div>
 
-                <div class="col-md-2 col-sm-3 logo hidden-xs"><img src="<?php echo helper::get('img/award.png') ?>" /></div>
+                <div class="col-md-2 col-sm-3 logo hidden-xs"><img src="<?php echo QGHBB_URL.'img/award.png' ?>" /></div>
 
                 <div class="content col-sm-6 col-xs-12">
                     <div class="title">Greenheart Wins 2018 Best Education Abroad Provider by WYSTC</div>
@@ -115,7 +118,9 @@ class Template extends Plugin {
                 </div>
 
                 <div class="col-xs-6 cta visible-xs"><button class="btn remove">got it</button></div>
-                <div class="col-md-2 col-sm-3 cta col-xs-6"><button class="btn">learn more</button></div>
+                <div class="col-md-2 col-sm-3 cta col-xs-6">
+                    <a href="https://greenheart.org/blog/greenheart-international/and-the-winner-is-greenheart/ " class="btn">learn more</a>
+                </div>
                 <div class="col-md-1 visible-md visible-lg"></div>
             </div>
         </div>
