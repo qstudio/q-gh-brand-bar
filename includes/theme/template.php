@@ -109,14 +109,14 @@ class Template extends Plugin {
             <span class="remove d-none d-md-block"></span>
 
             <div class="row">
-                <div class="col-md-3 logo hidden-xs"><img src="<?php echo QGHBB_URL.'img/award.png' ?>" /></div>
+                <div class="col-md-3 logo d-none d-md-block"><img src="<?php echo QGHBB_URL.'img/award.png' ?>" /></div>
 
                 <div class="content col-12 col-md-6">
                     <div class="title">Greenheart Wins 2018 Best Education Abroad Provider by WYSTC</div>
-                    <div class="hidden-xs">Our signature leadership program, the Greenheart Odyssey, topped the shortlist of initiatives honoring the best in cultural exchange. Judges of the WYSTC awards were among top industry experts in the field.</div>
+                    <div class="d-none d-md-block">Our signature leadership program, the Greenheart Odyssey, topped the shortlist of initiatives honoring the best in cultural exchange. Judges of the WYSTC awards were among top industry experts in the field.</div>
                 </div>
 
-                <div class="col-6 cta visible-xs"><button class="btn remove">got it</button></div>
+                <div class="col-6 cta d-block d-md-none"><button class="btn remove">got it</button></div>
                 <div class="col-md-3 cta col-6">
                     <a href="https://greenheart.org/blog/greenheart-international/and-the-winner-is-greenheart/ " class="btn">learn more</a>
                 </div>

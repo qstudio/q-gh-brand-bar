@@ -1583,7 +1583,7 @@ html.popup-open body {
   color: white;
   display: none;
   position: fixed;
-  z-index: 1; }
+  z-index: 999; }
   .q-bb-promo .remove {
     cursor: pointer;
     z-index: 1; }
