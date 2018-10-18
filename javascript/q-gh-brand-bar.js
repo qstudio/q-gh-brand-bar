@@ -9,12 +9,12 @@ if ( typeof jQuery !== 'undefined' ) {
     (function ($) {
     	// document.cookie = 'q-gh-bb-promo-closed;expires=Thu, 01 Jan 1970 00:00:00 GMT"';
     	if (!decodeURIComponent(document.cookie).split(';').map(function(cookie) { return cookie.trim() }).includes('q-gh-bb-promo-closed')) {
-    		$('#bb-promo').show();
+    		$('.q-bb-promo').show();
 		}
 
-		$('#bb-promo .remove').on('click', function () {
+		$('.q-bb-promo .remove').on('click', function () {
 			document.cookie = 'q-gh-bb-promo-closed';
-			$('#bb-promo').hide();
+			$('.q-bb-promo').hide();
         });
 
 		// clone body classes ##

@@ -72,11 +72,8 @@ class Template extends Plugin {
         // enqueue the script ##
         wp_enqueue_script( 'q-gh-brand-bar-js' );
 
-        wp_register_style( 'q-gh-brand-bar-css', QGHBB_URL.'css/q-gh-brand-bar.css', '', Plugin::$version);
-        wp_enqueue_style( 'q-gh-brand-bar-css' );
-
-        wp_register_style( 'q-gh-promo-css', QGHBB_URL.'scss/q-gh-promo.css', '', Plugin::$version);
-        wp_enqueue_style( 'q-gh-promo-css' );
+        wp_register_style( 'q-gh-main-css', QGHBB_URL.'scss/index.css', '', Plugin::$version);
+        wp_enqueue_style( 'q-gh-main-css' );
 
         wp_register_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700');
         wp_enqueue_style( 'google-fonts' );
@@ -108,23 +105,21 @@ class Template extends Plugin {
     public static function renderPromo()
     {
         ?>
-        <div id="bb-promo" class="widget-bb-promo">
-            <span class="remove hidden-xs"></span>
-            <div class="row row-eq-height">
-                <div class="col-md-1 visible-md visible-lg"></div>
+        <div class="q-bb q-bb-promo q-bsg">
+            <span class="remove d-none d-md-block"></span>
 
-                <div class="col-md-2 col-sm-3 logo hidden-xs"><img src="<?php echo QGHBB_URL.'img/award.png' ?>" /></div>
+            <div class="row">
+                <div class="col-md-3 logo hidden-xs"><img src="<?php echo QGHBB_URL.'img/award.png' ?>" /></div>
 
-                <div class="content col-sm-6 col-xs-12">
+                <div class="content col-12 col-md-6">
                     <div class="title">Greenheart Wins 2018 Best Education Abroad Provider by WYSTC</div>
                     <div class="hidden-xs">Our signature leadership program, the Greenheart Odyssey, topped the shortlist of initiatives honoring the best in cultural exchange. Judges of the WYSTC awards were among top industry experts in the field.</div>
                 </div>
 
-                <div class="col-xs-6 cta visible-xs"><button class="btn remove">got it</button></div>
-                <div class="col-md-2 col-sm-3 cta col-xs-6">
+                <div class="col-6 cta visible-xs"><button class="btn remove">got it</button></div>
+                <div class="col-md-3 cta col-6">
                     <a href="https://greenheart.org/blog/greenheart-international/and-the-winner-is-greenheart/ " class="btn">learn more</a>
                 </div>
-                <div class="col-md-1 visible-md visible-lg"></div>
             </div>
         </div>
         <?php
@@ -214,7 +209,7 @@ class Template extends Plugin {
                 'CCI Greenheart'    => array (
                         'src'       => 'greenheart-exchange'
                     ,   'url'       => 'https://www.greenheartexchange.org/'
-                    ,   'alt'       => 'programs in USA'
+                    ,   'alt'       => 'programs in U.S.'
                 ),
                 'Greenheart Travel' => array (
                         'src'       => 'greenheart-travel'
@@ -225,11 +220,6 @@ class Template extends Plugin {
                         'src'       => 'greenheart-shop'
                     ,   'url'       => 'http://www.greenheartshop.org'
                     ,   'alt'       => 'fair trade'
-                ),
-                'Greenheart Transforms' => array (
-                        'src'       => 'greenheart-transforms'
-                    ,   'url'       => 'http://www.greenhearttransforms.org'
-                    ,   'alt'       => 'transforms'
                 ),
                 // 'Greenheart Ibiza' => array (
                 //         'src'       => 'greenheart-ibiza'
