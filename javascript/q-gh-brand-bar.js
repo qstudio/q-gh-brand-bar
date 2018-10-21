@@ -8,11 +8,11 @@ if ( typeof jQuery !== 'undefined' ) {
 
     (function ($) {
     	// document.cookie = 'q-gh-bb-promo-closed;expires=Thu, 01 Jan 1970 00:00:00 GMT"';
-    	if (!decodeURIComponent(document.cookie).split(';').map(function(cookie) { return cookie.trim() }).includes('q-gh-bb-promo-closed')) {
-    		$('.q-bb-promo').show();
+		if (!decodeURIComponent(document.cookie).split(';').map(function(cookie) { return cookie.trim() }).includes('q-gh-bb-promo-closed')) {
+            window.location.hash === '#q-bb-promo-close' ? document.cookie = 'q-gh-bb-promo-closed' : $('.q-bb-promo').show();
 		}
 
-		$('.q-bb-promo .remove').on('click', function () {
+		$('.q-bb-promo .cross').on('click', function () {
 			document.cookie = 'q-gh-bb-promo-closed';
 			$('.q-bb-promo').hide();
         });

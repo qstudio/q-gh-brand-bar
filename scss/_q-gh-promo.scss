@@ -6,11 +6,6 @@
   position: fixed;
   z-index: 999;
 
-  .remove {
-    cursor: pointer;
-    z-index: 1;
-  }
-
   .logo {
     position: relative;
     text-align: center;
@@ -74,13 +69,10 @@
       }
     }
 
-    .remove {
-      background: no-repeat center url(../img/close.png);
-      height: 24px;
+    i.cross {
       position: absolute;
       right: 10px;
       top: 10px;
-      width: 24px;
     }
   }
 }

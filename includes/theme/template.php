@@ -106,7 +106,7 @@ class Template extends Plugin {
     {
         ?>
         <div class="q-bb q-bb-promo q-bsg">
-            <span class="remove d-none d-md-block"></span>
+            <i class="cross d-none d-md-block"></i>
 
             <div class="row">
                 <div class="col-md-3 logo d-none d-md-block"><img src="<?php echo QGHBB_URL.'img/award.png' ?>" /></div>
@@ -116,9 +116,9 @@ class Template extends Plugin {
                     <div class="d-none d-md-block">Our signature leadership program, the Greenheart Odyssey, topped the shortlist of initiatives honoring the best in cultural exchange. Judges of the WYSTC awards were among top industry experts in the field.</div>
                 </div>
 
-                <div class="col-6 cta d-block d-md-none"><button class="btn remove">got it</button></div>
+                <div class="col-6 cta d-block d-md-none"><button class="btn cross">got it</button></div>
                 <div class="col-md-3 cta col-6">
-                    <a href="https://greenheart.org/blog/greenheart-international/and-the-winner-is-greenheart/ " class="btn">learn more</a>
+                    <a target="_blank" href="https://greenheart.org/blog/greenheart-international/and-the-winner-is-greenheart/#q-bb-promo-close" class="btn cross">learn more</a>
                 </div>
             </div>
         </div>
