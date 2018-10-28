@@ -4,6 +4,9 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+.row:before, .row:after {
+  display: inline-block !important; }
+
 .q-bsg *,
 .q-bsg *::before,
 .q-bsg *::after {
@@ -1629,8 +1632,7 @@ html.popup-open body {
     .q-bb-promo .cta {
       align-items: center;
       display: flex;
-      justify-content: center;
-      margin: auto; }
+      justify-content: center; }
       .q-bb-promo .cta .btn {
         border: 2px solid white;
         background-color: #1D365B; }

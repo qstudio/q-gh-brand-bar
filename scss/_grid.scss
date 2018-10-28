@@ -13,6 +13,9 @@
 //  -ms-overflow-style: scrollbar;
 //}
 
+// safari grid fix
+.row:before, .row:after {display: inline-block !important;}
+
 // bootstrap grid
 .q-bsg {
   *,
