@@ -4,6 +4,7 @@
   color: white;
   display: none;
   position: fixed;
+  width: 100%;
   z-index: 999;
 
   .logo {
@@ -60,8 +61,11 @@
     }
 
     .cta {
+      align-items: center;
+      display: flex;
+      justify-content: center;
       margin: auto;
-      text-align: center;
+
 
       .btn {
         border: 2px solid white;

@@ -1590,6 +1590,7 @@ html.popup-open body {
   color: white;
   display: none;
   position: fixed;
+  width: 100%;
   z-index: 999; }
   .q-bb-promo .logo {
     position: relative;
@@ -1626,8 +1627,10 @@ html.popup-open body {
         font-size: 20px;
         margin-bottom: 5px; }
     .q-bb-promo .cta {
-      margin: auto;
-      text-align: center; }
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: auto; }
       .q-bb-promo .cta .btn {
         border: 2px solid white;
         background-color: #1D365B; }
