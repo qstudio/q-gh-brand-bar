@@ -4,9 +4,10 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-.row:before, .row:after {
-  display: inline-block !important; }
-
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .q-bsg .row:before, .q-bsg .row:after {
+      display: inline-block !important; } } }
 .q-bsg *,
 .q-bsg *::before,
 .q-bsg *::after {

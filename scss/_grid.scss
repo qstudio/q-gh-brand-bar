@@ -13,11 +13,14 @@
 //  -ms-overflow-style: scrollbar;
 //}
 
-// safari grid fix
-.row:before, .row:after {display: inline-block !important;}
-
 // bootstrap grid
 .q-bsg {
+  @media not all and (min-resolution:.001dpcm)
+  { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    // safari grid fix
+    .row:before, .row:after {display: inline-block !important;}
+  }}
+
   *,
   *::before,
   *::after {
