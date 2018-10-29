@@ -239,6 +239,16 @@ html.popup-open body {
     top: -30px !important;
 }
 
+@media (max-width: 767px) {
+    .install-greenheart-exchange.device-desktop .brand-bar {
+        top: -36px !important;
+    }
+
+    .install-greenheart-exchange.device-mobile .brand-bar {
+        top: -30px !important;
+    }
+}
+
 
 /* Club */
 
