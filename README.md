@@ -3,7 +3,7 @@
 **Tags:** custom plugin  
 **Requires at least:** 4  
 **Tested up to:** 4.7
-**Stable tag:** 0.6
+**Stable tag:** 0.6.1
 **License:** GPL  
 
 Add a global branding bar to all templates 

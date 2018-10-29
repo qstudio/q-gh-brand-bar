@@ -1546,12 +1546,10 @@ html.popup-open body {
 
 /* CCIGH */
 .install-cci-greenheart.device-desktop .brand-bar,
-.install-greenheart-exchange.device-desktop .brand-bar,
 .install-a-global-view.device-desktop .brand-bar {
   top: -36px !important; }
 
-.install-cci-greenheart.device-mobile .brand-bar,
-.install-greenheart-exchange.device-mobile .brand-bar {
+.install-cci-greenheart.device-mobile .brand-bar {
   top: -30px !important; }
 
 /* Club */
