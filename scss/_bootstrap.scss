@@ -1,0 +1,11 @@
+@import "bs/functions";
+@import "bs/variables";
+@import "bs/mixins";
+@import "bs/tooltip";
+
+.q-bsg {
+  // safari grid fix
+  @media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) and (stroke-color:transparent) { .row:before, .row:after {display: inline-block !important;} }}
+  @import "bs/utilities";
+  @import "bs/grid";
+}
