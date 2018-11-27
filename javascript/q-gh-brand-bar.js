@@ -13,7 +13,10 @@ if ( typeof jQuery !== 'undefined' ) {
 		}
 
 		$('.q-bb-promo .cross').on('click', function () {
-			document.cookie = 'q-gh-bb-promo-closed';
+            var d = new Date();
+            d.setTime(d.getTime() + (365*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+			document.cookie = 'q-gh-bb-promo-closed; ' + expires;
 			$('.q-bb-promo').hide();
         });
 
