@@ -1,3 +1,3 @@
 jQuery(function ($) {
-    $('body').tooltip({selector: '[data-toggle="tooltip"]'});
+    $('.q-bsg').tooltip({selector: '[data-toggle="tooltip"]'});
 });
