@@ -12,7 +12,7 @@ use Q_GH_Brand_Bar\Theme\Template as Template;
 class Plugin {
 
 	// Settings ##
-    static $version = '0.6.9';
+    static $version = '0.7';
     static $device; // current device handle ( 'desktop || handheld' ) ##
     protected static $debug = true;
     static $name = 'q-gh-bb';

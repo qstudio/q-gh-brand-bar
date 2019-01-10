@@ -1,0 +1,10 @@
+.btn {
+  &.btn-border {
+    border: 2px solid;
+    border-radius: 4px;
+  }
+
+  &+ .btn {
+    margin-left: 10px;
+  }
+}

@@ -40,7 +40,7 @@ class Template extends Plugin {
         wp_register_style( 'q-gh-main-css', QGHBB_URL.'scss/index.css', '', Plugin::$version);
         wp_enqueue_style( 'q-gh-main-css' );
 
-        wp_register_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700');
+        wp_register_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700|Sanchez:300|Sanchez:400');
         wp_enqueue_style( 'google-fonts' );
 
         wp_register_style('fontawesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css');
