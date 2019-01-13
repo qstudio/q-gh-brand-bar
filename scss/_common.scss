@@ -32,5 +32,5 @@
 
 // mobile modals
 body.wpadminbar .featherlight.modal-handheld {
-  top: 46px;
+  z-index: 99999;
 }
