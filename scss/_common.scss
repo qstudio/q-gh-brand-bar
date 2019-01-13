@@ -29,3 +29,8 @@
     z-index: 99;
   }
 }
+
+// mobile modals
+body.wpadminbar .featherlight.modal-handheld {
+  top: 46px;
+}

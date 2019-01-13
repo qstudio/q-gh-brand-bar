@@ -6975,6 +6975,9 @@
   width: 24px;
   z-index: 99; }
 
+body.wpadminbar .featherlight.modal-handheld {
+  top: 46px; }
+
 .btn.btn-border {
   border: 2px solid;
   border-radius: 4px; }

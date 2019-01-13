@@ -103,6 +103,10 @@ class Template extends Plugin {
         // add our class ##
         $classes[] = 'install-'.str_replace( array( '.', ' '), '-', $identifier );
 
+        if (is_admin_bar_showing()) {
+            $classes[] = 'wpadminbar';
+        }
+
         // return to filter ##
         return $classes;
 
