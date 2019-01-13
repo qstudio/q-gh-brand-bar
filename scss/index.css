@@ -6977,6 +6977,8 @@
 
 body.wpadminbar .featherlight.modal-handheld {
   z-index: 99999; }
+body.wpadminbar #snackbar-container {
+  z-index: 999999; }
 
 .btn.btn-border {
   border: 2px solid;

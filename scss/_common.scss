@@ -31,6 +31,12 @@
 }
 
 // mobile modals
-body.wpadminbar .featherlight.modal-handheld {
-  z-index: 99999;
+body.wpadminbar {
+  .featherlight.modal-handheld {
+    z-index: 99999;
+  }
+
+  #snackbar-container {
+    z-index: 999999;
+  }
 }
