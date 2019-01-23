@@ -22,7 +22,7 @@ class Template extends Plugin {
     public function __construct()
     {
 
-    	// scripts add to the end to override old libraries
+    	  // scripts add to the end to override old libraries
         add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ), 999999999);
         // styles add to the beginning to prevent broken styles
         add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_styles' ), 1);
@@ -37,6 +37,9 @@ class Template extends Plugin {
 
     public function wp_enqueue_styles()
     {
+        wp_register_style( 'q-gh-bs', QGHBB_URL.'scss/bootstrap.css', '', Plugin::$version);
+        wp_enqueue_style( 'q-gh-bs' );
+
         wp_register_style( 'q-gh-main-css', QGHBB_URL.'scss/index.css', '', Plugin::$version);
         wp_enqueue_style( 'q-gh-main-css' );
 
@@ -45,48 +48,28 @@ class Template extends Plugin {
 
         wp_register_style('fontawesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css');
         wp_enqueue_style( 'fontawesome' );
-    }
 
+        wp_register_style( 'q-snackbar', QGHBB_URL.'css/jquery.snackbar.min.css', '', Plugin::$version );
+        wp_enqueue_style( 'q-snackbar' );
+    }
 
     public function wp_enqueue_scripts()
     {
-
-        // only add these scripts on the correct page template ##
-        #if ( ! is_page_template( 'template-meet-our-students.php' ) ) { return false; }
-
-        // Register the script ##
-        #wp_register_script( 'multiselect-js', QGHBB_URL.'javascript/jquery.multiselect.js', array( 'jquery' ), $this->version, true );
-        #wp_enqueue_script( 'multiselect-js' );
-
         // Register the script ##
         wp_register_script( 'q-index-js', QGHBB_URL.'javascript/index.js', array( 'jquery' ), Plugin::$version, true );
         wp_register_script( 'q-gh-brand-bar-js', QGHBB_URL.'javascript/q-gh-brand-bar.js', array( 'jquery' ), Plugin::$version, true );
         wp_register_script( 'popperjs', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array( 'jquery' ), Plugin::$version, true);
         wp_register_script( 'bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery' ), Plugin::$version, true);
+        wp_register_script( 'q-jquery-snackbar', QGHBB_URL.'javascript/jquery.snackbar.min.js', array( 'jquery' ), Plugin::$version, true );
 
         // enqueue the script ##
         wp_enqueue_script( 'popperjs' );
         wp_enqueue_script( 'bootstrapjs' );
         wp_enqueue_script( 'q-index-js' );
         wp_enqueue_script( 'q-gh-brand-bar-js' );
+        wp_enqueue_script( 'q-jquery-snackbar' );
 
-        // // Now we can localize the script with our data.
-        // $translation_array = array(
-        //         'ajax_nonce'    => wp_create_nonce( 'q_mos_nonce' )
-        //     ,   'ajax_url'      => get_home_url( '', 'wp-admin/admin-ajax.php' )
-        //     ,   'saved'         => __( "Saved!", 'q-gh-brand-bar' )
-		// 	,   'input_saved'   => __( "Saved", 'q-gh-brand-bar' )
-		// 	,   'input_max'		=> __( "Maximum Saved", 'q-gh-brand-bar' ) // text to indicate that max number of students reached ##
-        //     ,   'student'       => __( "Student saved", 'q-gh-brand-bar' )
-        //     ,   'students'      => __( "Students saved", 'q-gh-brand-bar' )
-        //     ,   'error'         => __( "Error", 'q-gh-brand-bar' )
-		// 	,   'count_cookie'  => $this->count_cookie() // send cookie count to JS ##
-		// 	,   'max_students'  => $this->max_students // max number of students that can be saved ##
-        //     ,   'form_id'       => $this->form_id // Gravity Forms ID ##
-        // );
-        // wp_localize_script( 'q-gh-brand-bar-js', 'q_mos', $translation_array );
     }
-
 
     /*
     Add body class to allow each install to be identified uniquely

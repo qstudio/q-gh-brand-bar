@@ -1,0 +1,28 @@
+#snackbar-container {
+  &>.snackbar-opened {
+    background-color: #00A8DC;
+    font-size: 16px;
+    padding: 18px 24px;
+    color: #fff;
+  }
+}
+
+@media (min-width: 767px) {
+  #snackbar-container {
+    bottom: auto !important;
+    left: auto !important;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  #snackbar-container {
+    font-weight: bold;
+    text-align: center;
+
+    &>.snackbar-opened {
+      padding: 40px 20px;
+    }
+  }
+}

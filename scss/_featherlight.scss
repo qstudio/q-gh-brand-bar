@@ -1,0 +1,32 @@
+body .featherlight {
+  background: rgba(0,0,0,.8);
+  z-index: 10000;
+
+  .btn {
+    box-shadow: none;
+  }
+
+  .featherlight-close-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    background: transparent no-repeat center url(../img/ic-modal-close.svg);
+    box-shadow: none;
+    text-shadow: none;
+    outline: 0;
+    border: 0;
+    text-indent: -9999px;
+
+  }
+}
+
+body .featherlight.modal-desktop .featherlight-content {
+  width: 800px;
+}
+
+body .featherlight.modal-handheld .featherlight-content {
+  max-height: 100%;
+  width: 100%;
+}
