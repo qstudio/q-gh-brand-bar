@@ -124,7 +124,6 @@ class Update_Students {
             \add_post_meta( $this->post_id, 'mos_unique_id', \sanitize_key( $value->ID ), true );
             \add_post_meta( $this->post_id, 'mos_program_start_date', \sanitize_text_field( $value->ProgramStart ), true );
 
-
             // add taxonomy data ##
             $countries = $this->get_countries(); // fakes for now, as data not random enough ##
             $random_country = $countries[ array_rand(  $countries) ];
