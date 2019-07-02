@@ -6,6 +6,9 @@ namespace Q_GH_Brand_Bar\Theme;
 use Q_GH_Brand_Bar\Core\Plugin as Plugin;
 use Q_GH_Brand_Bar\Core\Helper as Helper;
 
+// Q ##
+use q\core\options as options;
+
 /**
  * Template level UI changes
  *
@@ -36,11 +39,81 @@ class Template extends Plugin {
 
     }
 
+
+    public static function is_active()
+    {
+
+        // helper::log( 'Checking if test suite is active' );
+        // helper::log( options::get('plugin') );
+        // return true;
+
+        if (
+            options::get( 'plugin' )
+            && ! empty( options::get( 'plugin' ) )
+            && is_object( options::get( 'plugin' ) )
+            && isset( options::get( 'plugin' )->brandbar )
+            && 1 == options::get( 'plugin' )->brandbar
+        ) {
+
+            // helper::log( 'Brand Bar UI active' );
+
+            // seems good ##
+            return true;
+        
+        }
+
+        // helper::log( 'Brand Bar UI not active' );
+
+        // inactive ##
+        return false;    
+
+    }
+
+
+
+    public static function has_promo()
+    {
+
+        // helper::log( 'Checking if test suite is active' );
+        // helper::log( options::get('plugin') );
+        // return true;
+
+        if (
+            options::get( 'plugin' )
+            && ! empty( options::get( 'plugin' ) )
+            && is_object( options::get( 'plugin' ) )
+            && isset( options::get( 'plugin' )->promo )
+            && 1 == options::get( 'plugin' )->promo
+        ) {
+
+            // helper::log( 'Promo UI active' );
+
+            // seems good ##
+            return true;
+        
+        }
+
+        // helper::log( 'Promo UI not active' );
+
+        // inactive ##
+        return false;    
+
+    }
+
+
     public function wp_enqueue_styles()
     {
 
-//        wp_register_style( 'q-gh-bs', QGHBB_URL.'scss/bootstrap.css', '', Plugin::$version);
-//        wp_enqueue_style( 'q-gh-bs' );
+        // check if the feature has been activated in the admin ##
+        if (
+            ! self::is_active()
+            && ! self::has_promo()
+        ) {
+
+            // kick out ##
+            return false;
+
+        }
 
         wp_register_style( 'q-gh-main-css', QGHBB_URL.'scss/index.css', '', Plugin::$version);
         wp_enqueue_style( 'q-gh-main-css' );
@@ -48,43 +121,34 @@ class Template extends Plugin {
         wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700|Sanchez:300|Sanchez:400');
         wp_enqueue_style( 'google-fonts' );
 
-//        wp_register_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css');
-//        wp_enqueue_style( 'fontawesome' );
-
-        // later, these can be removed when all sites run Q latest > 2.3.0 ## 
-//        wp_register_style( 'q-snackbar', QGHBB_URL.'css/jquery.snackbar.min.css', '', Plugin::$version );
-//        wp_enqueue_style( 'q-snackbar' );
-
     }
 
     public function wp_enqueue_scripts()
     {
+        
+        // check if the feature has been activated in the admin ##
+        if (
+            ! self::is_active()
+            && ! self::has_promo()
+        ) {
+
+            // kick out ##
+            return false;
+
+        }
 
         // Register the script ##
         wp_register_script( 'q-index-js', QGHBB_URL.'javascript/index.js', array( 'jquery' ), Plugin::$version, true );
         wp_register_script( 'q-gh-brand-bar-js', QGHBB_URL.'javascript/q-gh-brand-bar.js', array( 'jquery' ), Plugin::$version, true );
         
-        // @viktor - these need to be moved to Q ##
-//        wp_register_script( 'popperjs', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array( 'jquery' ), Plugin::$version, true);
-//        wp_register_script( 'bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery' ), Plugin::$version, true);
-
-        // later, these can be removed when all sites run Q latest > 2.3.0 ##
-//        wp_register_script( 'q-jquery-snackbar', QGHBB_URL.'javascript/jquery.snackbar.min.js', array( 'jquery' ), Plugin::$version, true );
-
-        // enqueue the script ##
-//        wp_enqueue_script( 'popperjs' );
-//        wp_enqueue_script( 'bootstrapjs' );
-
-        
         wp_enqueue_script( 'q-index-js' );
         wp_enqueue_script( 'q-gh-brand-bar-js' );
 
-        // later, these can be removed when all sites run Q latest > 2.3.0 ##
-//        wp_enqueue_script( 'q-jquery-snackbar' );
-
     }
 
-    /*
+
+
+    /**
     Add body class to allow each install to be identified uniquely
 
     @since      0.2
@@ -92,6 +156,16 @@ class Template extends Plugin {
     */
     public function body_class( $classes )
     {
+        
+        // check if the feature has been activated in the admin ##
+        if (
+            ! self::is_active()
+        ) {
+
+            // kick out ##
+            return false;
+
+        }
 
         // let's grab and prepare our site URL ##
         $identifier = strtolower( get_bloginfo( 'name' ) );
@@ -108,9 +182,24 @@ class Template extends Plugin {
 
     }
 
-    public static function renderPromo()
+
+
+
+
+    public static function render_promo()
     {
-        ?>
+
+        // check if the feature has been activated in the admin ##
+        if (
+            ! self::has_promo()
+        ) {
+
+            // kick out ##
+            return false;
+
+        }
+
+?>
         <div class="q-bb q-bb-promo q-bsg">
             <i class="cross d-none d-md-block"></i>
 
@@ -128,7 +217,8 @@ class Template extends Plugin {
                 </div>
             </div>
         </div>
-        <?php
+<?php
+
     }
 
 	/**
@@ -142,11 +232,21 @@ class Template extends Plugin {
 
         // @todo viktor - later, this needs to be set-up differently ##
         // render() should call a method for each UI featuer being rendered and they should have checks internally if the features are active ##
-        if (get_option(Plugin::$name)['promo']) {
-            self::renderPromo();
-        }
+        // if (get_option(Plugin::$name)['promo']) {
+        self::render_promo();
+        // }
         // mobile device ##
         #if ( 'handheld' == Helper::get_device() ) {
+
+        // check if the feature has been activated in the admin ##
+        if (
+            ! self::is_active()
+        ) {
+
+            // kick out ##
+            return false;
+
+        }
 
 ?>
         <div class="widget widget-brand-bar brand-bar wrapper-outer handheld">
@@ -195,115 +295,115 @@ class Template extends Plugin {
 
 
 
+    /**
+     * Get GH Branches
+     *
+     * @since       0.1
+     * @return      string   HTML
+     */
+    public static function the_branches_link()
+    {
+
+        // build array of branches ##
+        $array = array(
+
+            'Greenheart'    => array (
+                    'src'       => 'greenheart'
+                ,   'url'       => 'https://www.greenheart.org/'
+                ,   'alt'       => 'greenheart'
+            ),
+            'CCI Greenheart'    => array (
+                    'src'       => 'greenheart-exchange'
+                ,   'url'       => 'https://www.greenheartexchange.org/'
+                ,   'alt'       => 'programs in U.S.'
+            ),
+            'Greenheart Travel' => array (
+                    'src'       => 'greenheart-travel'
+                ,   'url'       => 'https://www.greenhearttravel.org'
+                ,   'alt'       => 'programs abroad'
+            ),
+            'Greenheart Shop' => array (
+                    'src'       => 'greenheart-shop'
+                ,   'url'       => 'http://www.greenheartshop.org'
+                ,   'alt'       => 'fair trade'
+            ),
+            // 'Greenheart Ibiza' => array (
+            //         'src'       => 'greenheart-ibiza'
+            //     ,   'url'       => 'http://www.greenheartibiza.org'
+            //     ,   'alt'       => 'Greenheart Ibiza'
+            // ),
+            // 'Greenheart Music' => array (
+            //         'src'       => 'greenheart-music'
+            //     ,   'url'       => 'http://www.greenheartmusic.com'
+            //     ,   'alt'       => 'Greenheart Music'
+            // )
+
+        );
+
+        // loop em out ##
+        foreach ( $array as $branch ) {
+
+?>
+        <li class='<?php echo $branch["src"]; ?>'>
+            <a href="<?php echo $branch["url"]; ?>" target="_blank" title="<?php echo $branch["alt"]; ?>">
+                <?php echo $branch["alt"]; ?>
+            </a>
+        </li>
+<?php
+
+        } // get more ##
+
+
+    }
+
+
+    /**
+     * Get Donate Link
+     *
+     * @since       0.1
+     * @return      string   HTML
+     */
+    public static function the_donate_link()
+    {
+
+?>
+        <li class="donate">
+            <a href="https://greenheart.org/donate" target="_blank" title="<?php _e( "Donate" , 'q-gh-brand-bar' ); ?>">
+                <?php _e( "Donate" , 'q-gh-brand-bar' ); ?>
+            </a>
+        </li>
+<?php
+
+    }
+
+
         /**
-         * Get GH Branches
-         *
-         * @since       0.1
-         * @return      string   HTML
-         */
-        public static function the_branches_link()
-        {
-
-            // build array of branches ##
-            $array = array(
-
-                'Greenheart'    => array (
-                        'src'       => 'greenheart'
-                    ,   'url'       => 'https://www.greenheart.org/'
-                    ,   'alt'       => 'greenheart'
-                ),
-                'CCI Greenheart'    => array (
-                        'src'       => 'greenheart-exchange'
-                    ,   'url'       => 'https://www.greenheartexchange.org/'
-                    ,   'alt'       => 'programs in U.S.'
-                ),
-                'Greenheart Travel' => array (
-                        'src'       => 'greenheart-travel'
-                    ,   'url'       => 'https://www.greenhearttravel.org'
-                    ,   'alt'       => 'programs abroad'
-                ),
-                'Greenheart Shop' => array (
-                        'src'       => 'greenheart-shop'
-                    ,   'url'       => 'http://www.greenheartshop.org'
-                    ,   'alt'       => 'fair trade'
-                ),
-                // 'Greenheart Ibiza' => array (
-                //         'src'       => 'greenheart-ibiza'
-                //     ,   'url'       => 'http://www.greenheartibiza.org'
-                //     ,   'alt'       => 'Greenheart Ibiza'
-                // ),
-                // 'Greenheart Music' => array (
-                //         'src'       => 'greenheart-music'
-                //     ,   'url'       => 'http://www.greenheartmusic.com'
-                //     ,   'alt'       => 'Greenheart Music'
-                // )
-
-            );
-
-            // loop em out ##
-            foreach ( $array as $branch ) {
+     * Branches open view
+     *
+     * @since       0.1
+     * @return      string   HTML
+     */
+    public static function the_branches_open()
+    {
 
 ?>
-            <li class='<?php echo $branch["src"]; ?>'>
-                <a href="<?php echo $branch["url"]; ?>" target="_blank" title="<?php echo $branch["alt"]; ?>">
-                    <?php echo $branch["alt"]; ?>
-                </a>
-            </li>
+        <ul class="branches-open">
+            <div class="branches-close"></div>
 <?php
 
-            } // get more ##
+            // main GH branches ##
+            self::the_branches_link();
 
+            // donate ##
+            self::the_donate_link();
 
-        }
-
-
-        /**
-         * Get Donate Link
-         *
-         * @since       0.1
-         * @return      string   HTML
-         */
-        public static function the_donate_link()
-        {
-
+            // GH logo ##
 ?>
-            <li class="donate">
-                <a href="https://greenheart.org/donate" target="_blank" title="<?php _e( "Donate" , 'q-gh-brand-bar' ); ?>">
-                    <?php _e( "Donate" , 'q-gh-brand-bar' ); ?>
-                </a>
-            </li>
+            <li class="greenheart"><a href="https://www.greenheart.org" target="_blank" title="Greenheart International"></a></li>
+        </ul>
 <?php
 
-        }
-
-
-         /**
-         * Branches open view
-         *
-         * @since       0.1
-         * @return      string   HTML
-         */
-        public static function the_branches_open()
-        {
-
-?>
-            <ul class="branches-open">
-                <div class="branches-close"></div>
-<?php
-
-                // main GH branches ##
-                self::the_branches_link();
-
-                // donate ##
-                self::the_donate_link();
-
-                // GH logo ##
-?>
-                <li class="greenheart"><a href="https://www.greenheart.org" target="_blank" title="Greenheart International"></a></li>
-            </ul>
-<?php
-
-        }
+    }
 
 
 }

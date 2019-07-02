@@ -24,6 +24,7 @@
  */
 
 namespace Q_GH_Brand_Bar;
+
 use Q_GH_Brand_Bar\Admin\Menu;
 use Q_GH_Brand_Bar\Core\Plugin as Plugin;
 use Q_GH_Brand_Bar\Theme\Template as Template;
@@ -43,7 +44,7 @@ defined( 'ABSPATH' ) OR exit;
 $autoload = array(
         'core/plugin'
     ,   'core/helper'
-    ,   'admin/menu'
+    // ,   'admin/menu'
     #,   'type/taxonomy'
     #,   'type/post-type'
     ,   'theme/template'
@@ -90,7 +91,7 @@ function hook() {
 
     // new class instance ##
     $instance = new Plugin();
-    new Menu();
+    // new Menu();
 
     // load theme hooks ##
     $instance->run_hooks();
