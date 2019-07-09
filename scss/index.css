@@ -235,7 +235,7 @@ html.popup-open body {
   margin: 0; }
 
 .install-greenheart-exchange.device-mobile .brand-bar .branches-open,
-.install-cci-greenheart.device-mobile .brand-bar .branches-open {
+.install-greenheart-exchange-documents.device-mobile .brand-bar .branches-open {
   top: 32px; }
 
 .device-mobile .brand-bar .branches-open li a {
@@ -266,11 +266,12 @@ html.popup-open body {
 #footer-global {
   display: none !important; }
 
-/* CCIGH */
+/* Exchange */
 .install-greenheart-exchange .brand-bar,
 .install-greenheart-exchange-documents .brand-bar {
   top: -36px !important; }
 
+  .install-greenheart-exchange-documents.device-mobile .brand-bar,
 .install-greenheart-exchange.device-mobile .brand-bar {
   top: -30px !important; }
 
@@ -304,7 +305,7 @@ html.popup-open body {
 .install-greenheart-international.device-mobile #header_wrapper_outer.q-menu-on #menu-toggle {
   margin-top: 30px; }
 
-/* GH Travel */
+/* Travel */
 .install-greenheart-travel #header .menu-container {
   margin-top: 30px; }
 
