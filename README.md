@@ -1,46 +1,19 @@
-# Global Branding Bar 
+# Q Brand Bar 
 **Contributors:** qlstudio  
 **Tags:** custom plugin  
 **Requires at least:** 4  
 **Tested up to:** 4.7
-**Stable tag:** 0.7.5
+**Stable tag:** 1.0.0
 **License:** GPL  
 
-Add a global branding bar to all templates 
-
-
-## Description 
-
-Add a global branding bar to all templates
-
-
-## Installation 
-
-
-1. Upload the plugin to your plugins directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Enjoy :)
-
-
-## Screenshots 
-
-No applicable screenshots
-
-
-## Frequently Asked Questions 
-
+Organational brand bar
 
 ## Changelog 
 
+### 1.0.0 ###
 
-### 0.1 
+* Moved render control to Q Settings
 
-* Initial working version
-
-
-## Upgrade Notice 
-
-
-### 0.1 
+### 0.1 ###
 
 * Initial working version

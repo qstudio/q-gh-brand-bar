@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Global Branding Bar
+ * Q Brand Bar
  *
  * @package   Q_GH_Brand_bar
  * @author    Q Studio <social@qstudio.us>
@@ -10,10 +10,10 @@
  * @copyright 2016 Q Studio
  *
  * @wordpress-plugin
- * Plugin Name:     Global Branding Bar
+ * Plugin Name:     Q Brand Bar
  * Plugin URI:      http://qstudio.us/
  * Description:     Global branding bar for all Greenheart Sites
- * Version:         0.7.5
+ * Version:         1.0.0
  * Author:          Q Studio
  * Author URI:      http://qstudio.us
  * License:         GPL2
