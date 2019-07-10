@@ -43,7 +43,7 @@ class Template extends Plugin {
     public static function is_active()
     {
 
-        // helper::log( 'Checking if test suite is active' );
+        // helper::log( 'Checking if BB is active' );
         // helper::log( options::get('plugin') );
         // return true;
 
@@ -74,7 +74,7 @@ class Template extends Plugin {
     public static function has_promo()
     {
 
-        // helper::log( 'Checking if test suite is active' );
+        // helper::log( 'Checking if Promo is active' );
         // helper::log( options::get('plugin') );
         // return true;
 
