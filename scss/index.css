@@ -270,12 +270,12 @@ html.popup-open body {
 .install-greenheart-exchange-documents.device-mobile .brand-bar {
   top: 46px !important; }
 
-.install-greenheart-exchange.device-mobile .brand-bar {
-  top: -30px !important; }
+/* .install-greenheart-exchange.device-mobile .brand-bar {
+  top: -30px !important; } */
 
 .install-greenheart-exchange.device-mobile .brand-bar .branches-open,
 .install-greenheart-exchange-documents.device-mobile .brand-bar .branches-open {
-  top: 32px; }
+  top: 0px; }
 
 /* Club */
 .install-greenheart-club-international {
