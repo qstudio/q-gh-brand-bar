@@ -115,7 +115,7 @@ class Template extends Plugin {
 
         }
 
-        wp_register_style( 'q-gh-main-css', QGHBB_URL.'scss/index.css', '', Plugin::$version);
+        wp_register_style( 'q-gh-main-css', QGHBB_URL.'scss/index.css', '', Plugin::version);
         wp_enqueue_style( 'q-gh-main-css' );
 
         wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700|Sanchez:300|Sanchez:400');
@@ -138,8 +138,8 @@ class Template extends Plugin {
         }
 
         // Register the script ##
-        wp_register_script( 'q-index-js', QGHBB_URL.'javascript/index.js', array( 'jquery' ), Plugin::$version, true );
-        wp_register_script( 'q-gh-brand-bar-js', QGHBB_URL.'javascript/q-gh-brand-bar.js', array( 'jquery' ), Plugin::$version, true );
+        wp_register_script( 'q-index-js', QGHBB_URL.'javascript/index.js', array( 'jquery' ), Plugin::version, true );
+        wp_register_script( 'q-gh-brand-bar-js', QGHBB_URL.'javascript/q-gh-brand-bar.js', array( 'jquery' ), Plugin::version, true );
         
         wp_enqueue_script( 'q-index-js' );
         wp_enqueue_script( 'q-gh-brand-bar-js' );

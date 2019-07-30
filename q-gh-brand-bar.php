@@ -13,7 +13,7 @@
  * Plugin Name:     Q Brand Bar
  * Plugin URI:      http://qstudio.us/
  * Description:     Global branding bar for all Greenheart Sites
- * Version:         1.0.1
+ * Version:         1.1.0
  * Author:          Q Studio
  * Author URI:      http://qstudio.us
  * License:         GPL2
