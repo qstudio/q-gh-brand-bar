@@ -3,12 +3,16 @@
 **Tags:** custom plugin  
 **Requires at least:** 4  
 **Tested up to:** 4.7
-**Stable tag:** 1.1.0
+**Stable tag:** 1.1.1
 **License:** GPL  
 
 Organational brand bar
 
 ## Changelog 
+
+### 1.1.1 ###
+
+* Removed body_class filters - moved to q_device
 
 ### 1.1.0 ###
 

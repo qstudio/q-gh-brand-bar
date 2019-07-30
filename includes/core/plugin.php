@@ -12,7 +12,7 @@ use Q_GH_Brand_Bar\Theme\Template as Template;
 class Plugin {
 
 	// Settings ##
-    const version = '1.1.0';
+    const version = '1.1.1';
     public static $debug = true;
     static $name = 'q-gh-bb';
 
