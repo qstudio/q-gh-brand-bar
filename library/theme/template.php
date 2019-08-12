@@ -1,20 +1,23 @@
 <?php
 
 // namespace ##
-namespace Q_GH_Brand_Bar\Theme;
+namespace q\gh_brand_bar\theme;
 
-use Q_GH_Brand_Bar\Core\Plugin as Plugin;
-use Q_GH_Brand_Bar\Core\Helper as Helper;
+// use Q_GH_Brand_Bar\Core\Plugin as Plugin;
+use q\gh_brand_bar\core\helper as helper;
 
 // Q ##
 use q\core\options as options;
+
+// load it up ##
+\q\gh_brand_bar\theme\template::run();
 
 /**
  * Template level UI changes
  *
  * @package   Q_GH_Brand_Bar
  */
-class Template extends Plugin {
+class template extends \q_gh_brand_bar {
 
 	/**
      * Instatiate Class
@@ -22,20 +25,20 @@ class Template extends Plugin {
      * @since       0.2
      * @return      void
      */
-    public function __construct()
+    public static function run()
     {
 
         // scripts add to the end to override old libraries
-        add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ), 999999999);
+        \add_action( 'wp_enqueue_scripts', array( get_class(), 'wp_enqueue_scripts' ), 999999999 );
 
         // styles add to the beginning to prevent broken styles
-        add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_styles' ), 1);
+        \add_action( 'wp_enqueue_scripts', array( get_class(), 'wp_enqueue_styles' ), 1 );
 
         // add body class identfier ##
-        // add_filter( 'body_class', array( $this, 'body_class' ), 1, 1 );
+        // add_filter( 'body_class', array( get_class(), 'body_class' ), 1, 1 );
 
         // add in brand bar ##
-        add_action( 'q_action_body_open', array ( $this, 'render' ), 3 );
+        \add_action( 'q_action_body_open', array ( get_class(), 'render' ), 3 );
 
     }
 
@@ -101,7 +104,9 @@ class Template extends Plugin {
     }
 
 
-    public function wp_enqueue_styles()
+
+
+    public static function wp_enqueue_styles()
     {
 
         // check if the feature has been activated in the admin ##
@@ -115,7 +120,7 @@ class Template extends Plugin {
 
         }
 
-        wp_register_style( 'q-gh-main-css', QGHBB_URL.'scss/index.css', '', Plugin::version);
+        wp_register_style( 'q-gh-main-css', self::get_plugin_url( 'library/theme/scss/index.css' ), '', self::version );
         wp_enqueue_style( 'q-gh-main-css' );
 
         wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700|Sanchez:300|Sanchez:400');
@@ -123,7 +128,9 @@ class Template extends Plugin {
 
     }
 
-    public function wp_enqueue_scripts()
+
+
+    public static function wp_enqueue_scripts()
     {
         
         // check if the feature has been activated in the admin ##
@@ -138,8 +145,8 @@ class Template extends Plugin {
         }
 
         // Register the script ##
-        wp_register_script( 'q-index-js', QGHBB_URL.'javascript/index.js', array( 'jquery' ), Plugin::version, true );
-        wp_register_script( 'q-gh-brand-bar-js', QGHBB_URL.'javascript/q-gh-brand-bar.js', array( 'jquery' ), Plugin::version, true );
+        wp_register_script( 'q-index-js', self::get_plugin_url( 'library/theme/javascript/index.js' ), array( 'jquery' ), self::version, true );
+        wp_register_script( 'q-gh-brand-bar-js', self::get_plugin_url( 'library/theme/javascript/q-gh-brand-bar.js' ), array( 'jquery' ), self::version, true );
         
         wp_enqueue_script( 'q-index-js' );
         wp_enqueue_script( 'q-gh-brand-bar-js' );
@@ -154,7 +161,7 @@ class Template extends Plugin {
     @since      0.2
     @return     Array      array of classes passed to method, with any additions
     */
-    public function body_class( $classes )
+    public static function body_class( $classes )
     {
         
         // check if the feature has been activated in the admin ##
@@ -204,7 +211,7 @@ class Template extends Plugin {
             <i class="cross d-none d-md-block"></i>
 
             <div class="row">
-                <div class="col-md-3 logo d-none d-md-block"><img src="<?php echo QGHBB_URL.'img/award.png' ?>" /></div>
+                <div class="col-md-3 logo d-none d-md-block"><img src="<?php echo self::get_plugin_url( 'library/theme/img/award.png' ) ?>" /></div>
 
                 <div class="content col-12 col-md-6">
                     <div class="title">Greenheart Wins 2018 Best Education Abroad Provider by WYSTC</div>
@@ -221,6 +228,8 @@ class Template extends Plugin {
 
     }
 
+
+
 	/**
      * Render Brand Bar - called from widget added to theme template
      *
@@ -230,13 +239,8 @@ class Template extends Plugin {
     public static function render()
     {
 
-        // @todo viktor - later, this needs to be set-up differently ##
-        // render() should call a method for each UI featuer being rendered and they should have checks internally if the features are active ##
-        // if (get_option(Plugin::$name)['promo']) {
+        // render ##
         self::render_promo();
-        // }
-        // mobile device ##
-        #if ( 'handheld' == Helper::get_device() ) {
 
         // check if the feature has been activated in the admin ##
         if (

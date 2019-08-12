@@ -3,12 +3,16 @@
 **Tags:** custom plugin  
 **Requires at least:** 4  
 **Tested up to:** 4.7
-**Stable tag:** 1.1.1
+**Stable tag:** 1.2.0
 **License:** GPL  
 
 Organational brand bar
 
 ## Changelog 
+
+### 1.2.0 ###
+
+* Moved plugins to Q standard model
 
 ### 1.1.1 ###
 
