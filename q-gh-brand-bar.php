@@ -14,6 +14,8 @@
 * GitHub Plugin URI: qstudio/q-gh-brand-bar
 */
 
+use q\gh_brand_bar\core\helper as helper;
+
 defined( 'ABSPATH' ) OR exit;
 
 if ( ! class_exists( 'q_gh_brand_bar' ) ) {
