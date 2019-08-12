@@ -12,7 +12,7 @@ Organational brand bar
 
 ### 1.2.0 ###
 
-* Moved plugins to Q standard model
+* Moved plugin to Q standard model
 
 ### 1.1.1 ###
 
