@@ -3,12 +3,18 @@
 **Tags:** custom plugin  
 **Requires at least:** 4.0.0  
 **Tested up to:** 4.7  
-**Stable tag:** 1.2.1  
+**Stable tag:** 1.2.11  
 **License:** GPL  
 
 Organational brand bar
 
 ## Changelog 
+
+### 1.2.11 ###
+
+* Not using logo in layout
+
+### 1.1.1 ###
 
 ### 1.2.1 ###
 
