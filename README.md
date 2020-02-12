@@ -3,30 +3,35 @@
 **Tags:** custom plugin  
 **Requires at least:** 4.0.0  
 **Tested up to:** 4.7  
-**Stable tag:** 1.2.11  
+**Stable tag:** 1.2.12  
 **License:** GPL  
 
 Organational brand bar
 
 ## Changelog 
+### 1.2.12 ###
+
+* Small Note
+
+### 1.2.12 ###
 
 ### 1.2.11 ###
 
 * Not using logo in layout
 
-### 1.1.1 ###
+### 1.2.11 ###
 
 ### 1.2.1 ###
 
 * Updated to Lorem Ipsum example content for Promo Bar
 
-### 1.1.1 ###
+### 1.2.1 ###
 
 ### 1.2.0 ###
 
 * Moved plugin to Q standard model
 
-### 1.1.1 ###
+### 1.2.0 ###
 
 * Removed body_class filters - moved to q_device
 

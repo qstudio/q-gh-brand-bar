@@ -211,7 +211,7 @@ class template extends \q_gh_brand_bar {
             <i class="cross d-none d-md-block"></i>
 
             <div class="row">
-                <!--<div class="col-md-3 logo d-none d-md-block"><img src="<?php echo self::get_plugin_url( 'library/theme/img/award.png' ) ?>" /> --></div>
+                <!--<div class="col-md-3 logo d-none d-md-block"><img src="<?php echo self::get_plugin_url( 'library/theme/img/award.png' ) ?>" /> </div> -->
 
                 <div class="content col-12 col-md-9 d-flex justify-content-end pl-5">
                     <div class="title">Coronavirus Headline Example Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
