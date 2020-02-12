@@ -3,12 +3,18 @@
 **Tags:** custom plugin  
 **Requires at least:** 4.0.0  
 **Tested up to:** 4.7  
-**Stable tag:** 1.2.0  
+**Stable tag:** 1.2.1  
 **License:** GPL  
 
 Organational brand bar
 
 ## Changelog 
+
+### 1.2.1 ###
+
+* Updated to Lorem Ipsum example content for Promo Bar
+
+### 1.1.1 ###
 
 ### 1.2.0 ###
 

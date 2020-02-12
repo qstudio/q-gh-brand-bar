@@ -211,16 +211,16 @@ class template extends \q_gh_brand_bar {
             <i class="cross d-none d-md-block"></i>
 
             <div class="row">
-                <div class="col-md-3 logo d-none d-md-block"><img src="<?php echo self::get_plugin_url( 'library/theme/img/award.png' ) ?>" /></div>
+                <div class="col-md-3 logo d-none d-md-block"><!--<img src="<?php echo self::get_plugin_url( 'library/theme/img/award.png' ) ?>" /> --></div>
 
                 <div class="content col-12 col-md-6">
-                    <div class="title">Greenheart Wins 2018 Best Education Abroad Provider by WYSTC</div>
-                    <div class="d-none d-md-block">Our signature leadership program, the Greenheart Odyssey, topped the shortlist of initiatives honoring the best in cultural exchange. Judges of the WYSTC awards were among top industry experts in the field.</div>
+                    <div class="title">Coronavirus Headline Example Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                    <!--<div class="d-none d-md-block">Our signature leadership program, the Greenheart Odyssey, topped the shortlist of initiatives honoring the best in cultural exchange. Judges of the WYSTC awards were among top industry experts in the field.</div> -->
                 </div>
 
                 <div class="col-6 cta d-block d-md-none"><button class="btn cross">got it</button></div>
                 <div class="col-md-3 cta col-6">
-                    <a target="_blank" href="https://greenheart.org/blog/greenheart-international/and-the-winner-is-greenheart/#q-bb-promo-close" class="btn cross">learn more</a>
+                    <a target="_blank" href="https://google.com" target="_blank" class="btn cross">learn more</a>
                 </div>
             </div>
         </div>
