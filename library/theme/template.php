@@ -73,7 +73,6 @@ class template extends \q_gh_brand_bar {
     }
 
 
-
     public static function has_promo()
     {
 
@@ -103,6 +102,35 @@ class template extends \q_gh_brand_bar {
 
     }
 
+    public static function has_ticker()
+    {
+
+        // helper::log( 'Checking if Promo is active' );
+        // helper::log( options::get('plugin') );
+        // return true;
+
+        if (
+            options::get( 'plugin' )
+            && ! empty( options::get( 'plugin' ) )
+            && is_object( options::get( 'plugin' ) )
+            && isset( options::get( 'plugin' )->ticker )
+            && 1 == options::get( 'plugin' )->ticker
+        ) {
+
+            // helper::log( 'Promo UI active' );
+
+            // seems good ##
+            return true;
+        
+        }
+
+        // helper::log( 'Promo UI not active' );
+
+        // inactive ##
+        return false;    
+
+    }
+
 
 
 
@@ -113,6 +141,7 @@ class template extends \q_gh_brand_bar {
         if (
             ! self::is_active()
             && ! self::has_promo()
+            && ! self::has_ticker()
         ) {
 
             // kick out ##
@@ -137,6 +166,7 @@ class template extends \q_gh_brand_bar {
         if (
             ! self::is_active()
             && ! self::has_promo()
+            && ! self::has_ticker()
         ) {
 
             // kick out ##
@@ -211,11 +241,11 @@ class template extends \q_gh_brand_bar {
             <i class="cross d-none d-md-block"></i>
 
             <div class="row">
-                <!--<div class="col-md-3 logo d-none d-md-block"><img src="<?php echo self::get_plugin_url( 'library/theme/img/award.png' ) ?>" /> </div> -->
+                <div class="col-md-3 col-3 logo d-none d-md-block"><img src="<?php echo self::get_plugin_url( 'library/theme/img/logo.png' ) ?>" /> </div>
 
-                <div class="content col-12 col-md-9 d-flex justify-content-end pl-5">
+                <div class="content col-12 col-md-6 d-block justify-content-center pl-5">
                     <div class="title">Coronavirus Update</div>
-                    <!--<div class="d-none d-md-block">Our signature leadership program, the Greenheart Odyssey, topped the shortlist of initiatives honoring the best in cultural exchange. Judges of the WYSTC awards were among top industry experts in the field.</div> -->
+                    <div class="d-none d-md-block">Currently, the CDC recommends avoiding non-essential travel to China and the U.S. Department of State issued a “do not travel to China” advisory...</div>
                 </div>
 
                 <div class="col-6 cta d-block d-md-none"><button class="btn cross">got it</button></div>
@@ -228,6 +258,41 @@ class template extends \q_gh_brand_bar {
 
     }
 
+    public static function render_ticker()
+    {
+
+        // check if the feature has been activated in the admin ##
+        if (
+            ! self::has_ticker()
+        ) {
+
+            // kick out ##
+            return false;
+
+        }
+
+?>
+    <div class="q-bsg q-consent">
+            <div class="q-consent-bar q-bb-promo2 q-bb-ticker q-bsg">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-md-11 col-10 col-xs-10 content">
+                              <span class="ticker-title">Coronavirus Update</span>
+                              <span class="ticker-btn"><a class="btn btn-border cross" href="https://greenheart.org/blog/exchange/coronavirus-update/" target="_blank">
+                            LEARN MORE
+                            </a></span>   
+                        </div>
+                        <div class="col-2 col-xs-2 col-md-1 cta d-flex"><button class="btn cross btn-light">
+                            <span class="txt-close">close</span>
+                            <span class="x-close">x</span>
+                        </button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php
+
+    }
 
 
 	/**
@@ -241,6 +306,9 @@ class template extends \q_gh_brand_bar {
 
         // render ##
         self::render_promo();
+
+        // ticker
+        self::render_ticker();
 
         // check if the feature has been activated in the admin ##
         if (

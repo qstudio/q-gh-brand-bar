@@ -410,3 +410,43 @@ body .featherlight.modal-handheld .featherlight-content {
       padding: 40px 20px; } }
 
 /*# sourceMappingURL=index.css.map */
+/* ticker tack-on 1/18/20 */
+.q-bb-promo2 { display: none; }
+.q-bb-promo .logo img { top: 33%; } /* overwrite for logo not image */
+.q-bb-ticker .content {
+  text-align: center;
+}
+.q-bb-ticker .x-close {
+  display:none;
+}
+.q-bb-ticker span.ticker-title {
+  font-size: 22px;
+  margin-right: 25px;
+}
+.q-bb-ticker .btn.cross {
+  flex-grow:1;
+  left: -15px;
+  position: relative;
+}
+
+@media (max-width: 767px){
+  .q-consent .q-consent-bar.q-bb-ticker {
+    width:100%;
+  }
+  .q-consent .q-consent-bar.q-bb-ticker .cta {
+    margin-top: 0;
+  }
+  .q-consent .q-consent-bar.q-bb-ticker .cta .btn {
+    width: 100%;
+  }
+  
+}
+@media (max-width: 550px){
+  .q-bb-ticker .txt-close {
+    display: none;
+  }
+  .q-bb-ticker .x-close {
+    display: flex;
+    justify-content: center;
+  }
+}

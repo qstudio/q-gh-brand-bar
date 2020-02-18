@@ -9,7 +9,11 @@
 Organational brand bar
 
 ## Changelog 
-### 1.2.12 ###
+### 1.2.2 ###
+
+* Added a News Ticker in addition to a Promo Bar, updated cookie name, requires Q update for additional option
+
+### 1.2.13 ###
 
 * Small Note
 
