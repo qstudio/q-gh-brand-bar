@@ -416,6 +416,9 @@ body .featherlight.modal-handheld .featherlight-content {
 .q-bb-ticker .content {
   text-align: center;
 }
+.q-bb-ticker .txt-close {
+  text-transform:uppercase;
+}
 .q-bb-ticker .x-close {
   display:none;
 }

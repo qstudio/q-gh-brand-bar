@@ -3,7 +3,7 @@
 **Tags:** custom plugin  
 **Requires at least:** 4.0.0  
 **Tested up to:** 4.7  
-**Stable tag:** 1.2.51
+**Stable tag:** 1.2.52
 **License:** GPL2  
 
 Organational brand bar
