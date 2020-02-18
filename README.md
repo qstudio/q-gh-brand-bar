@@ -3,12 +3,18 @@
 **Tags:** custom plugin  
 **Requires at least:** 4.0.0  
 **Tested up to:** 4.7  
-**Stable tag:** 1.2.2 
+**Stable tag:** 1.2.5 
 **License:** GPL  
 
 Organational brand bar
 
-## Changelog 
+## Changelog ##
+
+
+### 1.2.5 ###
+
+* Updater was not recognizing 1.2.2 as newer than 1.2.13 - made a new version 
+
 ### 1.2.2 ###
 
 * Added a News Ticker in addition to a Promo Bar, updated cookie name, requires Q update for additional option
