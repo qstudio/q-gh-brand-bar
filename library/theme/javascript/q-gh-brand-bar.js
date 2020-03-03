@@ -8,7 +8,7 @@ if ( typeof jQuery !== 'undefined' ) {
 
     (function ($) {
 		// document.cookie = 'q-gh-bb-promo-closed;expires=Thu, 01 Jan 1970 00:00:00 GMT"';
-		console.log(decodeURIComponent(document.cookie).split(';') );
+		// console.log(decodeURIComponent(document.cookie).split(';') );
         if (decodeURIComponent(document.cookie).split(';').map(function(cookie) { return cookie.trim() }).indexOf('q-gh-bb-promo2-closed') === -1) {
 			window.location.hash === '#q-bb-promo2-close' ? document.cookie = 'q-gh-bb-promo2-closed' : $('.q-bb-promo2, .q-bb-promo').show();
 		}
