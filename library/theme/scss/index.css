@@ -416,6 +416,9 @@ body .featherlight.modal-handheld .featherlight-content {
 .q-bb-ticker .content {
   text-align: center;
 }
+.q-consent .q-consent-bar.q-bb-ticker {
+  padding: 5px 0;
+}
 .q-bb-ticker .txt-close {
   text-transform:uppercase;
 }
@@ -423,8 +426,15 @@ body .featherlight.modal-handheld .featherlight-content {
   display:none;
 }
 .q-bb-ticker span.ticker-title {
-  font-size: 22px;
+  font-size: 16px;
   margin-right: 25px;
+}
+.q-bb-ticker span.ticker-btn a.btn {
+  font-weight: 500;
+  padding: 7px;
+}
+.q-bb-ticker span.ticker-btn a {
+  font-size:14px;
 }
 .q-bb-ticker .btn.cross {
   flex-grow:1;
