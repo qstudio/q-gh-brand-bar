@@ -9,10 +9,10 @@ if ( typeof jQuery !== 'undefined' ) {
     (function ($) {
 		// document.cookie = 'q-gh-bb-promo-closed;expires=Thu, 01 Jan 1970 00:00:00 GMT"';
 		console.log(decodeURIComponent(document.cookie).split(';') );
-        if (decodeURIComponent(document.cookie).split(';').map(function(cookie) { return cookie.trim() }).indexOf('q-gh-bb-promo2-closed') === -1) {
-			window.location.hash === '#q-bb-promo2-close' ? document.cookie = 'q-gh-bb-promo2-closed' : $('.q-bb-promo2, .q-bb-promo').show();
+        if (decodeURIComponent(document.cookie).split(';').map(function(cookie) { return cookie.trim() }).indexOf('q-gh-bb-promo3-closed') === -1) {
+			window.location.hash === '#q-bb-promo3-close' ? document.cookie = 'q-gh-bb-promo3-closed' : $('.q-bb-promo2, .q-bb-promo').show();
 		}
-
+		/* undismissable on the ticker for now 
 		$('.q-bb-promo2 .cross').on('click', function () {
             var d = new Date();
             d.setTime(d.getTime() + (365*24*60*60*1000));
@@ -28,7 +28,7 @@ if ( typeof jQuery !== 'undefined' ) {
 			document.cookie = 'q-gh-bb-promo2-closed; ' + expires;
 			$('.q-bb-promo, .q-bb-promo2').hide();
         });
-
+		*/
 		// clone body classes ##
 		if ( $('body').hasClass( 'browsers-mobile' ) ) {
 			// console.log( 'adding class..' );
