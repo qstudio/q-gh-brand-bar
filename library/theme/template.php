@@ -105,7 +105,7 @@ class template extends \q_gh_brand_bar {
     public static function has_ticker()
     {
 
-        // helper::log( 'Checking if Promo is active' );
+        // helper::log( 'Checking if Ticker is active' );
         // helper::log( options::get('plugin') );
         // return true;
 
@@ -117,14 +117,14 @@ class template extends \q_gh_brand_bar {
             && 1 == options::get( 'plugin' )->ticker
         ) {
 
-            // helper::log( 'Promo UI active' );
+            // helper::log( 'Ticker UI active' );
 
             // seems good ##
             return true;
         
         }
 
-        // helper::log( 'Promo UI not active' );
+        // helper::log( 'Ticker UI not active' );
 
         // inactive ##
         return false;    
@@ -149,11 +149,11 @@ class template extends \q_gh_brand_bar {
 
         }
 
-        wp_register_style( 'q-gh-main-css', self::get_plugin_url( 'library/theme/scss/index.css' ), '', self::version );
-        wp_enqueue_style( 'q-gh-main-css' );
+        \wp_register_style( 'q-gh-main-css', self::get_plugin_url( 'library/theme/scss/index.css' ), '', self::version );
+        \wp_enqueue_style( 'q-gh-main-css' );
 
-        wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700|Sanchez:300|Sanchez:400');
-        wp_enqueue_style( 'google-fonts' );
+        \wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700|Sanchez:300|Sanchez:400');
+        \wp_enqueue_style( 'google-fonts' );
 
     }
 
@@ -175,11 +175,11 @@ class template extends \q_gh_brand_bar {
         }
 
         // Register the script ##
-        wp_register_script( 'q-index-js', self::get_plugin_url( 'library/theme/javascript/index.js' ), array( 'jquery' ), self::version, true );
-        wp_register_script( 'q-gh-brand-bar-js', self::get_plugin_url( 'library/theme/javascript/q-gh-brand-bar.js' ), array( 'jquery' ), self::version, true );
+        \wp_register_script( 'q-index-js', self::get_plugin_url( 'library/theme/javascript/index.js' ), array( 'jquery' ), self::version, true );
+        \wp_register_script( 'q-gh-brand-bar-js', self::get_plugin_url( 'library/theme/javascript/q-gh-brand-bar.js' ), array( 'jquery' ), self::version, true );
         
-        wp_enqueue_script( 'q-index-js' );
-        wp_enqueue_script( 'q-gh-brand-bar-js' );
+        \wp_enqueue_script( 'q-index-js' );
+        \wp_enqueue_script( 'q-gh-brand-bar-js' );
 
     }
 
@@ -205,12 +205,12 @@ class template extends \q_gh_brand_bar {
         }
 
         // let's grab and prepare our site URL ##
-        $identifier = strtolower( get_bloginfo( 'name' ) );
+        $identifier = strtolower( \get_bloginfo( 'name' ) );
 
         // add our class ##
         $classes[] = 'install-'.str_replace( array( '.', ' '), '-', $identifier );
 
-        if (is_admin_bar_showing()) {
+        if ( \is_admin_bar_showing() ) {
             $classes[] = 'wpadminbar';
         }
 
@@ -258,6 +258,10 @@ class template extends \q_gh_brand_bar {
 
     }
 
+
+
+    
+
     public static function render_ticker()
     {
 
@@ -272,24 +276,28 @@ class template extends \q_gh_brand_bar {
         }
 
 ?>
-    <div class="q-bsg q-consent">
+        <div class="q-bsg q-consent">
             <div class="q-consent-bar q-bb-promo2 q-bb-ticker q-bsg">
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-12 col-xs-12 content">
                               <span class="ticker-title">Coronavirus Update</span>
-                              <span class="ticker-btn"><a class="btn btn-border cross" href="https://greenheart.org/blog/exchange/coronavirus-update/" target="_blank">
-                            LEARN MORE
-                            </a></span>   
+                              <span class="ticker-btn">
+                                <a class="btn btn-border cross" href="https://greenheart.org/blog/exchange/coronavirus-update/" target="_blank">LEARN MORE</a>
+                            </span>   
                         </div>
-<?php /* REMOVED THE CLOSE BUTTON
+<?php 
+
+                        /* 
+                        
+                        // REMOVED THE CLOSE BUTTON
                         <div class="col-2 col-xs-2 col-md-1 cta d-flex">
                             <button class="btn cross btn-light">
                                 <span class="txt-close">close</span>
                                 <span class="x-close">x</span>
                             </button>
                         </div>
-*/
+                        */
 ?>
                     </div>
                 </div>
