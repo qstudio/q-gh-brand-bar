@@ -276,16 +276,21 @@ class template extends \q_gh_brand_bar {
             <div class="q-consent-bar q-bb-promo2 q-bb-ticker q-bsg">
                 <div class="container-fluid">
                     <div class="row align-items-center">
-                        <div class="col-md-11 col-10 col-xs-10 content">
+                        <div class="col-12 col-xs-12 content">
                               <span class="ticker-title">Coronavirus Update</span>
                               <span class="ticker-btn"><a class="btn btn-border cross" href="https://greenheart.org/blog/exchange/coronavirus-update/" target="_blank">
                             LEARN MORE
                             </a></span>   
                         </div>
-                        <div class="col-2 col-xs-2 col-md-1 cta d-flex"><button class="btn cross btn-light">
-                            <span class="txt-close">close</span>
-                            <span class="x-close">x</span>
-                        </button></div>
+<?php /* REMOVED THE CLOSE BUTTON
+                        <div class="col-2 col-xs-2 col-md-1 cta d-flex">
+                            <button class="btn cross btn-light">
+                                <span class="txt-close">close</span>
+                                <span class="x-close">x</span>
+                            </button>
+                        </div>
+*/
+?>
                     </div>
                 </div>
             </div>
