@@ -143,7 +143,7 @@ class template extends \q_gh_brand_bar {
         if (
             ! self::is_active()
             // && ! self::has_promo()
-            && ! self::has_ticker()
+            || ! self::has_ticker()
         ) {
 
             // kick out ##
@@ -168,7 +168,7 @@ class template extends \q_gh_brand_bar {
         if (
             ! self::is_active()
             // && ! self::has_promo()
-            && ! self::has_ticker()
+            || ! self::has_ticker()
         ) {
 
             // kick out ##
