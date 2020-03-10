@@ -2,13 +2,18 @@
 **Contributors:** qlstudio  
 **Tags:** custom plugin  
 **Requires at least:** 4.0.0  
-**Tested up to:** 4.7  
-**Stable tag:** 1.2.57
+**Tested up to:** 5.0.0  
+**Stable tag:** 1.3.0  
 **License:** GPL2  
 
 Organational brand bar
 
 ## Changelog ##
+
+### 1.3.0 ###
+
+* Ticker content controls added to admin
+* Promo commented out, as not used in years
 
 ### 1.2.56 ###
 

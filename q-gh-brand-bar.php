@@ -4,7 +4,7 @@
 * Plugin Name:     Q Brand Bar
 * Plugin URI:      http://qstudio.us/
 * Description:     Global branding bar for all Greenheart Sites
-* Version:         1.2.57
+* Version:         1.3.0
 * Author:          Q Studio
 * Author URI:      http://qstudio.us
 * License:         GPL2
@@ -29,26 +29,26 @@ if ( ! class_exists( 'q_gh_brand_bar' ) ) {
         private static $instance = null;
 
         // Plugin Settings
-        const version = '1.2.57';
+        const version = '1.3.0';
         // static $device = ''; // start false ##
-        static $debug = true;
-        static $service = 'rest'; // soap OR rest ## @todo - move to admin selector, to allow plugin role to be switched via web UI
+        static $debug = false;
+        // static $service = 'rest'; // soap OR rest ## @todo - move to admin selector, to allow plugin role to be switched via web UI
         // static $load_count = 0;
-        const text_domain = 'q-geo'; // for translation ##
+        const text_domain = 'q-brand-bar'; // for translation ##
 
         // qpages - query variable - permalinks and titles ##
-        static $qpages = array();
+        // static $qpages = array();
 
         // store form, entry & response
-        public static
-            $gf_entry = false,
-            $gf_form = false,
-            $response = false,
-            $email_routing_sent = false,
-            $email_entry_sent = false
-        ;
+        // public static
+        //     $gf_entry = false,
+        //     $gf_form = false,
+        //     $response = false,
+        //     $email_routing_sent = false,
+        //     $email_entry_sent = false
+        // ;
 
-        public static $schema = null;
+        // public static $schema = null;
 
         // plugin properties ##
         public static $properties = false;

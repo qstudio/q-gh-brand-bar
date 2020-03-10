@@ -73,6 +73,7 @@ class template extends \q_gh_brand_bar {
     }
 
 
+    /*
     public static function has_promo()
     {
 
@@ -101,6 +102,7 @@ class template extends \q_gh_brand_bar {
         return false;    
 
     }
+    */
 
     public static function has_ticker()
     {
@@ -140,7 +142,7 @@ class template extends \q_gh_brand_bar {
         // check if the feature has been activated in the admin ##
         if (
             ! self::is_active()
-            && ! self::has_promo()
+            // && ! self::has_promo()
             && ! self::has_ticker()
         ) {
 
@@ -165,7 +167,7 @@ class template extends \q_gh_brand_bar {
         // check if the feature has been activated in the admin ##
         if (
             ! self::is_active()
-            && ! self::has_promo()
+            // && ! self::has_promo()
             && ! self::has_ticker()
         ) {
 
@@ -222,7 +224,7 @@ class template extends \q_gh_brand_bar {
 
 
 
-
+    /*
     public static function render_promo()
     {
 
@@ -257,11 +259,13 @@ class template extends \q_gh_brand_bar {
 <?php
 
     }
-
+    */
 
 
     
-
+    /**
+     * Render News Ticker
+     */
     public static function render_ticker()
     {
 
@@ -275,15 +279,22 @@ class template extends \q_gh_brand_bar {
 
         }
 
-?>
+        // test options ##
+        // helper::log( options::get() );
+
+        // let's get the dynamic data from options - this is forced as required, so we can trust it's there ##
+        $title = options::get( 'plugin_ticker_title' );
+        $url = options::get( 'plugin_ticker_url' );
+
+?>  
         <div class="q-bsg q-consent">
             <div class="q-consent-bar q-bb-promo2 q-bb-ticker q-bsg">
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-12 col-xs-12 content">
-                              <span class="ticker-title">Coronavirus Update</span>
+                              <span class="ticker-title"><?php echo $title; ?></span>
                               <span class="ticker-btn">
-                                <a class="btn btn-border cross" href="https://greenheart.org/blog/exchange/coronavirus-update/" target="_blank">LEARN MORE</a>
+                                <a class="btn btn-border cross" href="<?php echo $url; ?>" target="_blank">LEARN MORE</a>
                             </span>   
                         </div>
 <?php 
@@ -318,7 +329,7 @@ class template extends \q_gh_brand_bar {
     {
 
         // render ##
-        self::render_promo();
+        // self::render_promo();
 
         // ticker
         self::render_ticker();
