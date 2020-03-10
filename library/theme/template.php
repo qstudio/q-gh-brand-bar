@@ -3,7 +3,7 @@
 // namespace ##
 namespace q\gh_brand_bar\theme;
 
-// use Q_GH_Brand_Bar\Core\Plugin as Plugin;
+// Import ##
 use q\gh_brand_bar\core\helper as helper;
 
 // Q ##
@@ -143,7 +143,7 @@ class template extends \q_gh_brand_bar {
         if (
             ! self::is_active()
             // && ! self::has_promo()
-            || ! self::has_ticker()
+            && ! self::has_ticker()
         ) {
 
             // kick out ##
@@ -151,11 +151,11 @@ class template extends \q_gh_brand_bar {
 
         }
 
-        \wp_register_style( 'q-gh-main-css', self::get_plugin_url( 'library/theme/scss/index.css' ), '', self::version );
-        \wp_enqueue_style( 'q-gh-main-css' );
+        \wp_register_style( 'q-gh-bb-main-css', self::get_plugin_url( 'library/theme/scss/index.css' ), '', self::version );
+        \wp_enqueue_style( 'q-gh-bb-main-css' );
 
-        \wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700|Sanchez:300|Sanchez:400');
-        \wp_enqueue_style( 'google-fonts' );
+        \wp_register_style( 'q-gh-bb-google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Lato:400,700|Sanchez:300|Sanchez:400');
+        \wp_enqueue_style( 'q-gh-bb-google-fonts' );
 
     }
 
@@ -168,7 +168,7 @@ class template extends \q_gh_brand_bar {
         if (
             ! self::is_active()
             // && ! self::has_promo()
-            || ! self::has_ticker()
+            && ! self::has_ticker()
         ) {
 
             // kick out ##
@@ -177,10 +177,10 @@ class template extends \q_gh_brand_bar {
         }
 
         // Register the script ##
-        \wp_register_script( 'q-index-js', self::get_plugin_url( 'library/theme/javascript/index.js' ), array( 'jquery' ), self::version, true );
+        \wp_register_script( 'q-gh-bb-index-js', self::get_plugin_url( 'library/theme/javascript/index.js' ), array( 'jquery' ), self::version, true );
         \wp_register_script( 'q-gh-brand-bar-js', self::get_plugin_url( 'library/theme/javascript/q-gh-brand-bar.js' ), array( 'jquery' ), self::version, true );
         
-        \wp_enqueue_script( 'q-index-js' );
+        \wp_enqueue_script( 'q-gh-bb-index-js' );
         \wp_enqueue_script( 'q-gh-brand-bar-js' );
 
     }
@@ -199,6 +199,7 @@ class template extends \q_gh_brand_bar {
         // check if the feature has been activated in the admin ##
         if (
             ! self::is_active()
+            && ! self::has_ticker()
         ) {
 
             // kick out ##
@@ -274,6 +275,8 @@ class template extends \q_gh_brand_bar {
             ! self::has_ticker()
         ) {
 
+            helper::log( 'News Ticker not active, stopping render here.' );
+
             // kick out ##
             return false;
 
@@ -292,8 +295,8 @@ class template extends \q_gh_brand_bar {
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-12 col-xs-12 content">
-                              <span class="ticker-title"><?php echo $title; ?></span>
-                              <span class="ticker-btn">
+                            <span class="ticker-title"><?php echo $title; ?></span>
+                            <span class="ticker-btn">
                                 <a class="btn btn-border cross" href="<?php echo $url; ?>" target="_blank">LEARN MORE</a>
                             </span>   
                         </div>
@@ -338,6 +341,8 @@ class template extends \q_gh_brand_bar {
         if (
             ! self::is_active()
         ) {
+
+            helper::log( 'Brand Bar not active, stopping render here.' );
 
             // kick out ##
             return false;
