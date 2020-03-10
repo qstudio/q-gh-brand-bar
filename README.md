@@ -3,12 +3,16 @@
 **Tags:** custom plugin  
 **Requires at least:** 4.0.0  
 **Tested up to:** 5.0.0  
-**Stable tag:** 1.3.0  
+**Stable tag:** 1.3.1  
 **License:** GPL2  
 
 Organational brand bar
 
 ## Changelog ##
+
+### 1.3.1 ###
+
+* Tweak to asset inclusion logic
 
 ### 1.3.0 ###
 
