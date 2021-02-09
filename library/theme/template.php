@@ -428,6 +428,11 @@ class template extends \q_gh_brand_bar {
                 ,   'url'       => 'http://www.greenheartshop.org'
                 ,   'alt'       => 'fair trade'
             ),
+            'Greenheart Connects' => array (
+                'src'   => 'greenheartconnects',
+                'url'   => 'https://greenheartconnects.org',
+                'alt'   => 'connects'
+            ), 
             // 'Greenheart Ibiza' => array (
             //         'src'       => 'greenheart-ibiza'
             //     ,   'url'       => 'http://www.greenheartibiza.org'
