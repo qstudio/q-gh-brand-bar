@@ -3,12 +3,16 @@
 **Tags:** custom plugin  
 **Requires at least:** 4.0.0  
 **Tested up to:** 5.0.0  
-**Stable tag:** 1.3.3  
+**Stable tag:** 1.3.4  
 **License:** GPL2  
 
 Organational brand bar
 
 ## Changelog ##
+
+### 1.3.4 ###
+
+* Standardized link formats
 
 ### 1.3.3 ###
 
