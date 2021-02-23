@@ -431,7 +431,7 @@ class template extends \q_gh_brand_bar {
             'Greenheart Connects' => array (
                 'src'   => 'greenheartconnects',
                 'url'   => 'https://www.greenheartconnects.org',
-                'alt'   => 'connects'
+                'alt'   => 'greenheart connects'
             ), 
             // 'Greenheart Ibiza' => array (
             //         'src'       => 'greenheart-ibiza'
